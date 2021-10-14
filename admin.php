@@ -11,12 +11,13 @@ require_once 'core/init.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
 </head>
+
 <body>
     <form style="display:flex;flex-direction:column;justify-content:center;align-items:center" action="api/admin.api.php" method="POST" enctype="multipart/form-data">
-        <input type="text" name="titlu" placeholder="Titlu">
-        <textarea name="subtitluri" id="" cols="30" rows="10"></textarea>
-        <textarea name="txt" id="" cols="30" rows="10"></textarea>
-        <select name="sectiune" id="">
+        <input required type="text" name="titlu" placeholder="Titlu">
+        <textarea required name="subtitluri" id="" cols="30" rows="10"></textarea>
+        <textarea required name="txt" id="" cols="30" rows="10"></textarea>
+        <select required name="sectiune" id="">
             <optgroup label="Sectiuni">
                 <option value="paleontologie">Paleontologie</option>
                 <option value="arheologie">Arheologie</option>
@@ -40,8 +41,8 @@ require_once 'core/init.php';
                 <option value="diverse">Diverse</option>
             </optgroup>
         </select>
-        <input type="file" name="imagini[]" multiple>
-        <input type="date" name="data" >
+        <input required type="file" name="imagini[]" multiple>
+        <input required type="date" name="data">
         <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
         <input type="submit" value="adauga" name="submit">
     </form>

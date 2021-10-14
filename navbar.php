@@ -53,8 +53,8 @@
                         <a class="dropdown-item" href="#">Plan Cultural</a>
                 </div>
                 </li>
-                </li><!-- End: Organizare -->
-                <li class="nav-item"><a class="nav-link" href="#">Taxe-tarife</a></li><!-- Start: Arhive Online -->
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Taxe-tarife</a></li>
                 <li class="nav-item">
                 <li class="nav-item dropdown">
                     <a aria-expanded="false" data-bs-toggle="dropdown" class="dropdown-toggle text-uppercase" href="#">Arhiva Online
@@ -65,7 +65,6 @@
                         <a class="dropdown-item" href="sectiune.php?sect=diverse">Diverse</a>
                     </div>
                 </li>
-                </li><!-- End: Arhive Online -->
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
             </ul>
         </div>
