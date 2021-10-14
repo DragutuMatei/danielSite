@@ -23,6 +23,7 @@ class User
         }
     }
 
+    
     public function getPosts(){
         $posts = $this->_db->get("blog", array("id",">","0"), "ORDER BY ID DESC LIMIT 6");
         return $posts->results();
