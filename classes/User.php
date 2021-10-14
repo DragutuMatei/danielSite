@@ -33,4 +33,9 @@ class User
         return $post->first();
     }
 
+    public function getPostsBy($sect){
+        $posts = $this->_db->get("blog", array("sectiune","=", $sect), "ORDER BY ID DESC");
+        return $posts->results();    
+    }
+
 }

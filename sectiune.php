@@ -1,5 +1,62 @@
 <?php
 require_once './core/init.php';
+
+$sect = $_GET['sect'];
+
+$path = "";
+
+switch ($sect) {
+    case 'paleontologie':
+        $path = "Sectiuni / paleontologie";
+        break;
+    case 'arheologie':
+        $path = "Sectiuni / Arheologie";
+        break;
+    case 'numismatica':
+        $path = "Sectiuni / Numistimatică";
+        break;
+    case 'istorie':
+        $path = "Sectiuni / Istorie";
+        break;
+    case 'arta':
+        $path = "Sectiuni / Arta";
+        break;
+    case 'educatie':
+        $path = "Sectiuni / Educatie muzeala";
+        break;
+    case '2015':
+        $path = "Evenimente / 2015";
+        break;
+    case '2016':
+        $path = "Evenimente / 2016";
+        break;
+    case '2017':
+        $path = "Evenimente / 2017";
+        break;
+    case '2018':
+        $path = "Evenimente / 2018";
+        break;
+    case '2019':
+        $path = "Evenimente / 2019";
+        break;
+    case '2020':
+        $path = "Evenimente / 2020";
+        break;
+    case '2021':
+        $path = "Evenimente / 2021";
+        break;
+    case 'publicatii':
+        $path = "Arhiva Online / Publicatii tecucene";
+        break;
+    case 'materiale':
+        $path = "Arhiva Online / Materiale Informative";
+        break;
+    case 'diverse':
+        $path = "Arhiva Online / Diverse";
+        break;
+}
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,8 +71,11 @@ require_once './core/init.php';
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
 </head>
 
+
+
 <body>
-    <?php require_once 'navbar.php'; ?>
+<?php require_once 'navbar.php'; ?>
+
     <header class="masthead" style="background-image:url('assets/img/muzeu-front.jpg');">
         <div class="overlay"></div>
         <div class="container">
@@ -23,7 +83,12 @@ require_once './core/init.php';
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="site-heading">
                         <h1>Muzeul de istorie&nbsp;</h1>
-                        <h1>Anton Cincu</h1><span class="subheading">Aici mare text pentru tine</span>
+                        <h1>Anton Cincu</h1>
+                        <span class="subheading">
+                            <?php
+                            echo $path;
+                            ?>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -36,12 +101,12 @@ require_once './core/init.php';
                 <?php
                 $user = new User();
 
-                $posts = $user->getPosts();
+                $posts = $user->getPostsBy($sect);
                 foreach ($posts as $post) {
                     echo ' <div class="post-preview">
                                 <a href="post.php?id=' . $post->id . '">
                                     <h2 class="post-title">' . $post->titlu . '</h2>
-                                    <h3 class="post-subtitle">'.explode(";", $post->subtitluri)[0].'&nbsp;</h3>
+                                    <h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3>
                                 </a>
                                 <p class="post-meta">A fost postat de <a href="https://www.facebook.com/muzeultecucean.antoncincu.1" target="_blank">Daniel Dojan</a></p>
                             </div>
@@ -69,8 +134,7 @@ require_once './core/init.php';
                     </a>
                     <p class="post-meta">Posted by&nbsp;<a href="#">te descurci</a></p>
                 </div>
-                <hr>
-                <div class="clearfix"><button class="btn btn-primary float-end" type="button">Ultimele postari</button></div> -->
+                <hr> -->
             </div>
         </div>
     </div>

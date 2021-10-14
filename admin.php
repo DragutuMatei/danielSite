@@ -23,7 +23,7 @@ require_once 'core/init.php';
                 <option value="numismatica">Numistimatică</option>
                 <option value="istorie">Istorie</option>
                 <option value="arta">Arta</option>
-                <option value="edicatie">Educatie muzeala</option>
+                <option value="educatie">Educatie muzeala</option>
             </optgroup>
             <optgroup label="Evenimente">
                 <option value="2015">2015</option>
