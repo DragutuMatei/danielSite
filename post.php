@@ -7,7 +7,8 @@ $post = $user->getPost($id);
 $subtitle  = explode(";", $post->subtitluri);
 $txt = explode(";", $post->txt);
 $poze = json_decode($post->poze);
-
+$numar_slider = 0;
+$inceput = 0;
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,23 +50,45 @@ $poze = json_decode($post->poze);
                             echo '<h2 class="section-heading">' . $subtitle[$i] . '</h2>';
                         echo "<p>" . $txt[$i] . "</p>";
                     }
-
-                    foreach ($poze as $poza) {
-                        echo "<img src='" . $poza . "' />";
-                    }
-
                     ?>
-                    <figure>
-                        <blockquote class="blockquote">
-                            <p class="mb-0">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</p>
-                        </blockquote>
-                    </figure>
+                    <div class="container-lg my-3">
+                        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <ol class="carousel-indicators">
+
+                                <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                                <?php
+                                foreach ($poze as $poza) {
+                                    $numar_slider++;
+                                    echo "<li data-bs-target='#myCarousel' data-bs-slide-to='" . $numar_slider . "''></li>";
+                                }
+
+                                ?>
+                            </ol>
+
+                            <div class="carousel-inner">
+                                <?php
+                                foreach ($poze as $poza) {
+                                    if ($inceput = 0) {
+                                        echo "<div class='carousel-item active'>";
+                                        $inceput++;
+                                    } elseif ($inceput > 0) {
+                                        echo "<div class='carousel-item'>";
+                                    }
+                                    echo "<img src='" . $poza . "' class='d-block w-100'alt='Slide'>";
+                                    echo "</div>";
+                                }
+                                ?>
+                                <figure>
+                                    <blockquote class="blockquote">
+                                        <p class="mb-0">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</p>
+                                    </blockquote>
+                                </figure>
 
 
 
-                </div>
-            </div>
-        </div>
+                            </div>
+                        </div>
+                    </div>
     </article>
     <footer>
         <div class="container">
