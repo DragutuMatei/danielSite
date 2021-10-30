@@ -58,3 +58,14 @@ if (isset($_POST['submit'])) {
         }
     }
 }
+
+
+if (isset($_POST['delete'])) {
+    $user = new User();
+
+    if ($user->deletePost(array("id", "=", Input::get("id")))) {
+        Redirect::to("../admin.php?nop=false"); 
+    } else {
+        Redirect::to("../admin.php?nop=true");
+    }
+}

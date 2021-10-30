@@ -1,5 +1,7 @@
 <?php
 require_once 'core/init.php';
+$user = new User();
+$posts = $user->getAll();
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +11,12 @@ require_once 'core/init.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Admin - Muzeul Tecuci</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/2647a8e79d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -46,6 +53,22 @@ require_once 'core/init.php';
         <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
         <input type="submit" value="adauga" name="submit">
     </form>
+
+    <?php
+    foreach ($posts as $post) {
+        echo ' <div class="post-preview">
+                <a href="post.php?id=' . $post->id . '">
+                    <h2 class="post-title">' . $post->titlu . '</h2>
+                    <h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3>
+                </a>
+                <form action="api/admin.api.php" method="POST">
+                    <input type="hidden" name="id" value="' . $post->id . '" >
+                    <button style="background:none;" type="submit" name="delete"> <i class="fas fa-trash-alt"></i> </button>
+                </form>
+            </div>
+            <hr>';
+    }
+    ?>
 </body>
 
 </html>

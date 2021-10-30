@@ -23,19 +23,27 @@ class User
         }
     }
 
-    public function getPosts(){
-        $posts = $this->_db->get("blog", array("id",">","0"), "ORDER BY ID DESC LIMIT 6");
+    public function getPosts()
+    {
+        $posts = $this->_db->get("blog", array("id", ">", "0"), "ORDER BY ID DESC LIMIT 6");
         return $posts->results();
     }
 
-    public function getPost($id){
-        $post = $this->_db->get("blog", array("id","=",$id));
+    public function getPost($id)
+    {
+        $post = $this->_db->get("blog", array("id", "=", $id));
         return $post->first();
     }
 
-    public function getPostsBy($sect){
-        $posts = $this->_db->get("blog", array("sectiune","=", $sect), "ORDER BY ID DESC");
-        return $posts->results();    
+    public function getAll()
+    {
+        $post = $this->_db->get("blog", array("id", ">=", "0"));
+        return $post->results();
     }
 
+    public function getPostsBy($sect)
+    {
+        $posts = $this->_db->get("blog", array("sectiune", "=", $sect), "ORDER BY ID DESC");
+        return $posts->results();
+    }
 }

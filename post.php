@@ -18,6 +18,29 @@ $inceput = 0;
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Blog Post - Muzeul Tecuci</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+    <!-- <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script> -->
+
+
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -51,67 +74,278 @@ $inceput = 0;
                         echo "<p>" . $txt[$i] . "</p>";
                     }
                     ?>
-                    <div class="container-lg my-3">
-                        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <!--                     <div class="container-lg my-3">
+
+
+                        <div data-ride="carousel" class="carousel slide" id="carousel-example-generic">
                             <ol class="carousel-indicators">
 
-                                <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
                                 <?php
-                                    foreach ($poze as $poza) {
-                                        $numar_slider++;
-                                        echo "<li data-bs-target='#myCarousel' data-bs-slide-to='" . $numar_slider . "'></li>";
-                                    }
+                                //     $i = 0;
+                                //     foreach ($poze as $poza) {
 
+                                //         if ($i == 0)
+                                //             echo '<li class="active" data-slide-to="0" data-target="#carousel-example-generic"></li>';
+                                //         else
+                                //             echo '<li data-slide-to="' . $i . '" data-target="#carousel-example-generic" class=""></li>';
+
+                                //         $i++;
+                                //     }
+
+                                //     
                                 ?>
-                            </ol>
+                            // </ol>
 
-                        <div class="carousel-inner">
-                        <?php
-                        foreach ($poze as $poza) {
-                                if($inceput = 0)
-                                {
-                                    echo "<div class='carousel-item active'>";
-                                    $inceput++;
-                                }
-                                elseif ($inceput > 0) {
-                                    echo "<div class='carousel-item'>";
-                                }
-                                    echo "<img src='" . $poza . "' class='d-block w-100'alt='Slide'>";
-                                echo "</div>";
+                            // <div class="carousel-inner">
+                            //     <?php
+                                    //     $i = 0;
+                                    //     foreach ($poze as $poza) {
 
-                                
-                            }
-                        ?>  
-                    <figure>
-                        <blockquote class="blockquote">
-                            <p class="mb-0">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</p>
-                        </blockquote>
-                    </figure>
+                                    //         if ($i == 0)
+                                    //             echo '
+                                    //         <div class="item active">
+                                    //             <img src="' . $poza . '" />
+                                    //         </div>
+                                    //         ';
+                                    //         else
+                                    //             echo '
+                                    //         <div class="item">
+                                    //             <img src="' . $poza . '" />
+                                    //         </div>
+                                    //         ';
 
-                            <div class="carousel-inner">
-                                <?php
-                                foreach ($poze as $poza) {
-                                    if ($inceput = 0) {
-                                        echo "<div class='carousel-item active'>";
-                                        $inceput++;
-                                    } elseif ($inceput > 0) {
-                                        echo "<div class='carousel-item'>";
-                                    }
-                                    echo "<img src='" . $poza . "' class='d-block w-100'alt='Slide'>";
-                                    echo "</div>";
-                                }
-                                ?>
-                                <figure>
-                                    <blockquote class="blockquote">
-                                        <p class="mb-0">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</p>
-                                    </blockquote>
-                                </figure>
-
-
-
+                                    //         $i++;
+                                    //     }
+                                    ?>
                             </div>
+                            <a data-slide="prev" href="#carousel-example-generic" class="left carousel-control">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a data-slide="next" href="#carousel-example-generic" class="right carousel-control">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
                         </div>
                     </div>
+                </div>
+            </div> -->
+
+
+                    <div class="row">
+                        <style>
+                            * {
+                                box-sizing: border-box
+                            }
+
+                            body {
+                                font-family: Verdana, sans-serif;
+                                margin: 0
+                            }
+
+                            .mySlides {
+                                display: none
+                            }
+
+                            img {
+                                vertical-align: middle;
+                            }
+
+                            /* Slideshow container */
+                            .slideshow-container {
+                                max-width: 1000px;
+                                position: relative;
+                                margin: auto;
+                            }
+
+                            /* Next & previous buttons */
+                            .prev,
+                            .next {
+                                cursor: pointer;
+                                position: absolute;
+                                top: 50%;
+                                width: auto;
+                                padding: 16px;
+                                margin-top: -22px;
+                                color: white;
+                                font-weight: bold;
+                                font-size: 18px;
+                                transition: 0.6s ease;
+                                border-radius: 0 3px 3px 0;
+                                user-select: none;
+                            }
+
+                            /* Position the "next button" to the right */
+                            .next {
+                                right: 0;
+                                border-radius: 3px 0 0 3px;
+                            }
+
+                            /* On hover, add a black background color with a little bit see-through */
+                            .prev:hover,
+                            .next:hover {
+                                background-color: rgba(0, 0, 0, 0.8);
+                            }
+
+                            /* Caption text */
+                            .text {
+                                color: #f2f2f2;
+                                font-size: 15px;
+                                padding: 8px 12px;
+                                position: absolute;
+                                bottom: 8px;
+                                width: 100%;
+                                text-align: center;
+                            }
+
+                            /* Number text (1/3 etc) */
+                            .numbertext {
+                                color: #f2f2f2;
+                                font-size: 12px;
+                                padding: 8px 12px;
+                                position: absolute;
+                                top: 0;
+                            }
+
+                            /* The dots/bullets/indicators */
+                            .dot {
+                                cursor: pointer;
+                                height: 15px;
+                                width: 15px;
+                                margin: 0 2px;
+                                background-color: #bbb;
+                                border-radius: 50%;
+                                display: inline-block;
+                                transition: background-color 0.6s ease;
+                            }
+
+                            .active,
+                            .dot:hover {
+                                background-color: #717171;
+                            }
+
+                            /* Fading animation */
+                            .fadess {
+                                -webkit-animation-name: fade;
+                                -webkit-animation-duration: 1.5s;
+                                animation-name: fade;
+                                animation-duration: 1.5s;
+                            }
+
+                            @-webkit-keyframes fade {
+                                from {
+                                    opacity: .4
+                                }
+
+                                to {
+                                    opacity: 1
+                                }
+                            }
+
+                            @keyframes fade {
+                                from {
+                                    opacity: .4
+                                }
+
+                                to {
+                                    opacity: 1
+                                }
+                            }
+
+                            /* On smaller screens, decrease text size */
+                            @media only screen and (max-width: 300px) {
+
+                                .prev,
+                                .next,
+                                .text {
+                                    font-size: 11px
+                                }
+                            }
+                        </style>
+                        </head>
+
+                        <body>
+
+                            <div class="slideshow-container" style="margin-top:30px">
+                                <?php
+                                $i = 0;
+                                foreach ($poze as $poza) {
+                                    $i++;
+
+                                    echo '
+                        <div class="mySlides fadess">
+                            <div class="numbertext">' . $i . ' / ' . count($poze) . '</div>
+                            <img src="' . $poza . '" style="width:100%">
+                        </div>
+                        ';
+                                }
+
+                                ?>
+
+                                <!-- <div class="mySlides fade">
+                            <div class="numbertext">2 / 3</div>
+                            <img src="img_snow_wide.jpg" style="width:100%">
+                            <div class="text">Caption Two</div>
+                        </div>
+
+                        <div class="mySlides fade">
+                            <div class="numbertext">3 / 3</div>
+                            <img src="img_mountains_wide.jpg" style="width:100%">
+                            <div class="text">Caption Three</div>
+                        </div> -->
+
+                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                            </div>
+                            <br>
+
+                            <div style="text-align:center">
+                                <span class="dot" onclick="currentSlide(1)"></span>
+                                <span class="dot" onclick="currentSlide(2)"></span>
+                                <span class="dot" onclick="currentSlide(3)"></span>
+                            </div>
+
+                            <script>
+                                var slideIndex = 1;
+                                showSlides(slideIndex);
+
+                                function plusSlides(n) {
+                                    showSlides(slideIndex += n);
+                                }
+
+                                function currentSlide(n) {
+                                    showSlides(slideIndex = n);
+                                }
+
+                                function showSlides(n) {
+                                    var i;
+                                    var slides = document.getElementsByClassName("mySlides");
+                                    var dots = document.getElementsByClassName("dot");
+                                    if (n > slides.length) {
+                                        slideIndex = 1
+                                    }
+                                    if (n < 1) {
+                                        slideIndex = slides.length
+                                    }
+                                    for (i = 0; i < slides.length; i++) {
+                                        slides[i].style.display = "none";
+                                    }
+                                    for (i = 0; i < dots.length; i++) {
+                                        dots[i].className = dots[i].className.replace(" active", "");
+                                    }
+                                    slides[slideIndex - 1].style.display = "block";
+                                    dots[slideIndex - 1].className += " active";
+                                }
+                            </script>
+                    </div>
+
+
+                </div>
+
+                <figure>
+                    <blockquote class="blockquote">
+                        <p class="mb-0">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</p>
+                    </blockquote>
+                </figure>
     </article>
     <footer>
         <div class="container">
