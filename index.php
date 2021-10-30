@@ -23,7 +23,7 @@ require_once './core/init.php';
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="site-heading">
                         <h1>Muzeul de istorie&nbsp;</h1>
-                        <h1>Anton Cincu</h1><span class="subheading">Aici mare text pentru tine</span>
+                        <h1>Teodor Cincu</h1><span class="subheading">Aici mare text pentru tine</span>
                     </div>
                 </div>
             </div>

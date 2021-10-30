@@ -9,7 +9,7 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="index.php">Acasa</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Program Vizitare</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Istoric</a></li><!-- Start: Sectiuni -->
+                <li class="nav-item"><a class="nav-link" href="istoric.php">Istoric</a></li><!-- Start: Sectiuni -->
                 <li class="nav-item">
                 <li class="nav-item dropdown">
                     <a aria-expanded="false" data-bs-toggle="dropdown" class="dropdown-toggle text-uppercase" href="#">Sectiuni
@@ -48,7 +48,7 @@
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">R.O.F.</a>
                         <a class="dropdown-item" href="#">Organigramă</a>
-                        <a class="dropdown-item" href="#">Transparență salarială</a>
+                        <a class="dropdown-item" href="transparenta.php">Transparență salarială</a>
                         <a class="dropdown-item" href="#">Buget </a>
                         <a class="dropdown-item" href="#">Plan Cultural</a>
                 </div>
