@@ -147,6 +147,9 @@ $inceput = 0;
 
                             img {
                                 vertical-align: middle;
+                                height: 400px;
+                                object-fit: contain;
+                                width: auto;
                             }
 
                             /* Slideshow container */
