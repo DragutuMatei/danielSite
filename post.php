@@ -171,6 +171,8 @@ $inceput = 0;
                                 transition: 0.6s ease;
                                 border-radius: 0 3px 3px 0;
                                 user-select: none;
+                                background-color: rgba(0, 0, 0, 0.8);
+
                             }
 
                             /* Position the "next button" to the right */
@@ -178,12 +180,7 @@ $inceput = 0;
                                 right: 0;
                                 border-radius: 3px 0 0 3px;
                             }
-
                             /* On hover, add a black background color with a little bit see-through */
-                            .prev:hover,
-                            .next:hover {
-                                background-color: rgba(0, 0, 0, 0.8);
-                            }
 
                             /* Caption text */
                             .text {

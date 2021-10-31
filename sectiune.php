@@ -76,7 +76,7 @@ switch ($sect) {
 <body>
 <?php require_once 'navbar.php'; ?>
 
-    <header class="masthead" style="background-image:url('assets/img/muzeu-front.jpg');">
+    <header class="masthead" style="background-image:url('assets/img/sect.jpg');background-position:bottom center;">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">

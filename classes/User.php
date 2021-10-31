@@ -25,7 +25,7 @@ class User
 
     public function getPosts()
     {
-        $posts = $this->_db->get("blog", array("id", ">", "0"), "ORDER BY ID DESC LIMIT 6");
+        $posts = $this->_db->get("blog", array("id", ">", "0"), "ORDER BY data DESC LIMIT 6");
         return $posts->results();
     }
 
@@ -37,13 +37,13 @@ class User
 
     public function getAll()
     {
-        $post = $this->_db->get("blog", array("id", ">=", "0"));
+        $post = $this->_db->get("blog", array("id", ">=", "0"), "ORDER BY data DESC");
         return $post->results();
     }
 
     public function getPostsBy($sect)
     {
-        $posts = $this->_db->get("blog", array("sectiune", "=", $sect), "ORDER BY ID DESC");
+        $posts = $this->_db->get("blog", array("sectiune", "=", $sect), "ORDER BY data DESC");
         return $posts->results();
     }
 }

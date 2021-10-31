@@ -28,7 +28,7 @@ require_once './core/init.php';
             </div>
         </div>
     </header>
-    <div class="container" style="text-align: center;"><img src="assets/img/venituri.jpg"></div>
+    <div class="container" style="text-align: center;"><img style="width: 100%;" src="assets/img/venituri.jpg"></div>
     <hr>
     <footer>
         <div class="container">
