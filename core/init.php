@@ -1,14 +1,5 @@
 <?php
 session_start();
-// mysql://b530bbc81d89db:3ca8efeb@eu-cdbr-west-01.cleardb.com/heroku_32e2961b360ef01?reconnect=true
-/*
-
-b530bbc81d89db host
-3ca8efeb pw
-eu-cdbr-west-01.cleardb.com
-
-
-*/
 
 $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $cleardb_server = $cleardb_url["host"];
