@@ -69,6 +69,8 @@ $posts = $user->getAll();
             <hr>';
     }
     ?>
+
+    <?php require_once './footer.php';  ?>
 </body>
 
 </html>

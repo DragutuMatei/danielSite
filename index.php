@@ -57,8 +57,10 @@ require_once './core/init.php';
         </div>
     </div>
     </div><!-- End: 1 Row 2 Columns -->
-    <h3 style="color: #0085a1;text-align: center;font-family: 'Lora',serif;"><br><strong>SECTIUNEA BLOG A WEBSITE-ULUI</strong><br></h3>
-    <h2 style="text-align: center;font-family: 'Poppins',sans-serif;"><strong>CELE MAI NOI ARTICOLE</strong><br></h2>
+    <br><br>
+    <br><br>
+    <h2 style="color: #0085a1;text-align: center;font-family: 'Lora',serif;"><strong>CELE MAI NOI ARTICOLE</strong><br></h2>
+    <br><br>
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-lg-8">
@@ -104,6 +106,8 @@ require_once './core/init.php';
             </div>
         </div>
     </div>
+    <br><br>
+    <br><br>
     <section class="features">
         <div class="container">
 
@@ -197,20 +201,7 @@ require_once './core/init.php';
         </div>
     </section><!-- End Features Section -->
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-lg-8 mx-auto">
-                    <ul class="list-inline text-center">
-                        <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></li>
-                        <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span></li>
-                        <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-instagram fa-stack-1x fa-inverse"></i></span></li>
-                    </ul>
-                    <p class="text-muted copyright">Copyright&nbsp;©&nbsp;Muzeul Tecuci 2021</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php require_once './footer.php';  ?>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/clean-blog.js"></script>
 </body>
