@@ -16,7 +16,8 @@ require_once './core/init.php';
 
 <body>
     <?php require_once 'navbar.php'; ?>
-    <header class="masthead" style="background-image:url('assets/img/istorie.jpg');">
+    <header class="masthead" style="background-image:url('assets/img/istorie.jpg');     background-attachment: fixed;
+    background-position: bottom;">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
