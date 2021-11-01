@@ -347,8 +347,9 @@ $inceput = 0;
 
 
                 </div>
-                <br><br><br><br>
                 <figure>
+                <br><br><br><br>
+
                     <blockquote class="blockquote">
                         <p class="mb-0">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</p>
                     </blockquote>
