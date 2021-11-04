@@ -5,7 +5,8 @@ if (isset($_POST['submit'])) {
     $parola = "parola";
     if (Input::get("password") == $parola) {
         Session::put("admin", true);
-    } else{
+    } else {
         Session::put("admins", true);
     }
+    Redirect::to(" ../redirect.php");
 }

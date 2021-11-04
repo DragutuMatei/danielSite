@@ -1,7 +1,7 @@
 <?php
 require_once './core/init.php';
 
-if (isset(Session::get("admin"))) {
+if (isset($_SESSION["admin"])) {
     Redirect::to("admin.php");
 }
 
@@ -20,8 +20,9 @@ if (isset(Session::get("admin"))) {
 
 <body>
     <?php
-    if (isset(Session::get("admins"))) {
+    if (isset($_SESSION["admins"])) {
         echo "<h2>Parolă greșită</h2>";
+        Session::delete("admins");
     }
     ?>
     <form action="api/decizie.php" method="POST">

@@ -1,7 +1,7 @@
 <?php
 require_once 'core/init.php';
 
-if (!isset(Session::get("admin")))
+if (!isset($_SESSION["admin"]))
     Redirect::to("redirect.php");
 $user = new User();
 $posts = $user->getAll();
