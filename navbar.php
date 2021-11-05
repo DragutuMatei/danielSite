@@ -6,7 +6,7 @@
 <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php">
-            <img src="./assets/img/Asset 1.png" alt="" width="100" height="45" class="d-inline-block align-top" alt="">
+            <img src="./assets/img/logo muzeu.png" width="150" height="30" class="d-inline-block align-top" alt="">
 
         </a>
         <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
