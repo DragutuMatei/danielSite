@@ -4,7 +4,7 @@
     }
 </style>
 <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
-    <div class="container">
+    <div class="container-fluid">
         <a class="navbar-brand" href="index.php">
             <img src="./assets/img/Asset 1.png" alt="" width="100" height="45" class="d-inline-block align-top" alt="">
 
