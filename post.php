@@ -140,7 +140,7 @@ $inceput = 0;
                                 display: none
                             }
 
-                            img {
+                            .imgC {
                                 vertical-align: middle;
                                 height: 400px;
                                 object-fit: contain;
@@ -269,7 +269,7 @@ $inceput = 0;
                                     echo '
                         <div class="mySlides fadess">
                             <div class="numbertext">' . $i . ' / ' . count($poze) . '</div>
-                            <img src="' . $poza . '" style="width:100%">
+                            <img src="' . $poza . '" style="width:100%" class="imgC">
                         </div>
                         ';
                                 }
