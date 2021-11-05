@@ -33,7 +33,12 @@ $inceput = 0;
 
 
 
-
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-1.compiled.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-grid.compiled.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-reboot.compiled.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-utilities.compiled.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.compiled.css">
+    <link rel="stylesheet" href="assets/css/styles.compiled.css">
 
 
 
