@@ -20,6 +20,13 @@ $posts = $user->getAll();
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/2647a8e79d.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-1.compiled.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-grid.compiled.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-reboot.compiled.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-utilities.compiled.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.compiled.css">
+    <link rel="stylesheet" href="assets/css/styles.compiled.css">
 </head>
 
 <body>
