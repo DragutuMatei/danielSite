@@ -3,7 +3,7 @@
         text-transform: uppercase;
     }
 </style>
-<nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+<nav class="navbar navbar-light navbar-expand-lg fixed-top" style="height: 100px;" id="mainNav">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php">
             <img src="./assets/img/Asset 1.png" width="69" height="46" class="d-inline-block align-top" alt="">
