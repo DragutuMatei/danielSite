@@ -33,13 +33,6 @@ $inceput = 0;
 
 
 
-    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-1.compiled.css">
-    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-grid.compiled.css">
-    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-reboot.compiled.css">
-    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-utilities.compiled.css">
-    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.compiled.css">
-    <link rel="stylesheet" href="assets/css/styles.compiled.css">
-
 
 
 
@@ -49,6 +42,14 @@ $inceput = 0;
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    
+
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-1.compiled.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-grid.compiled.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-reboot.compiled.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-utilities.compiled.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.compiled.css">
+    <link rel="stylesheet" href="assets/css/styles.compiled.css">
 </head>
 
 <body>
