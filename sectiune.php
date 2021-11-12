@@ -55,8 +55,6 @@ switch ($sect) {
         $path = "Arhiva Online / Diverse";
         break;
 }
-
-
 ?>
 <!DOCTYPE html>
 <html>
