@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
 
         for ($i = 0; $i < $cate_is; $i++) {
             // $temporale = $_FILES['imagini']['tmp_name'][$i];
-                $array_cu_imag[$i] = $_FILES['imagini']['name'];
+                $array_cu_imag[$i] = $_FILES['imagini']['name'][$i];
         //     if ($temporale != "") {
         //         $array_cu_imag[$i] = "./assets/img/" . $_FILES['imagini']['name'][$i];
         //         $newFilePath = "../assets/img/" . $_FILES['imagini']['name'][$i];
