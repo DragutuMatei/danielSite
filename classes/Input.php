@@ -39,7 +39,7 @@ class Input
         // foreach ($names as $name) {
         // foreach($name)
         for ($i = 0; $i < count($names['imagini']); $i++) {
-            $rez = $r->upload($names["imagini"][$i], ['folder' => $folder]);
+            $rez = $r->upload($names["imagini"]['tmp_name'][$i], ['folder' => $folder]);
             array_push($urls, $rez['secure_url']);
         }
         // return $rez;
