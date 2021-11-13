@@ -32,14 +32,15 @@ class Input
         return "";
     }
 
-    public static function moveImg($folder, $names = array())
+    public static function moveImg($folder, $names)
     {
         $r = new UploadApi();
         $urls = array();
-        foreach ($names as $name) {
-            $rez = $r->upload($_FILES[$name]['tmp_name'], ['folder' => $folder]);
-            array_push($urls, $rez['secure_url']);
-        }
-        return $urls;
+        // foreach ($names as $name) {
+        // foreach($name)
+        $rez = $r->upload($names["imagini"], ['folder' => $folder]);
+        // array_push($urls, $rez['secure_url']);
+        // }
+        return $rez;
     }
 }

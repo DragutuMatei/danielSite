@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
         //     }
         }
 
-        $imgs = Input::moveImg("muzeu/", $array_cu_imag);
+        $imgs = Input::moveImg("muzeu/", $_FILES);
 
         try {
             $user->addPost(array(
