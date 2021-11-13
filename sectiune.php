@@ -106,7 +106,7 @@ switch ($sect) {
                                     <h2 class="post-title">' . $post->titlu . '</h2>
                                     <h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3>
                                 </a>
-                                <p class="post-meta">A fost postat de <a href="https://www.facebook.com/muzeultecucean.antoncincu.1" target="_blank">Daniel Dojan</a></p>
+                                <p class="post-meta">A fost postat de '.$post->user.'</p>
                             </div>
                             <hr>';
                 }

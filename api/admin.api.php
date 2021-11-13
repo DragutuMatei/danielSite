@@ -28,7 +28,8 @@ if (isset($_POST['submit'])) {
     if ($validation->passed()) {
         $user = new User();
 
-        $imgs = Input::moveImg("muzeu/", $_FILES);
+        $imgs = Input::moveImg("muzeu/");
+        $cover = Input::moveImg("muzeu/", true);
 
         try {
             $user->addPost(array(
@@ -37,10 +38,11 @@ if (isset($_POST['submit'])) {
                 "subtitluri" => Input::get("subtitluri"),
                 "txt" => Input::get("txt"),
                 "poze" => json_encode($imgs),
+                "cover" => $cover,
                 "sectiune" => Input::get("sectiune"),
                 "data" => Input::get("data")
             ));
-            // Redirect::to("../admin.php");
+            Redirect::to("../admin.php");
         } catch (Exception $e) {
             die($e->getMessage());
         }

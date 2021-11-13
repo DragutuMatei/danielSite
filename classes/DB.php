@@ -115,12 +115,6 @@ class DB
 
             $sql = "INSERT INTO " . $table . " (`" . implode('`, `', $keys) . "` ) VALUES (" . $values . ")";
 
-            echo $sql."<br>";
-
-            foreach ($fields as $field) {
-                echo $field."<br>";
-            }
-
             if (!$this->query($sql, $fields)->getError()) {
                 return true;
             }

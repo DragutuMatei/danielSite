@@ -31,7 +31,7 @@ $inceput = 0;
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    
+
 
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-1.compiled.css">
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-grid.compiled.css">
@@ -44,14 +44,14 @@ $inceput = 0;
 <body>
     <?php require_once 'navbar.php'; ?>
 
-    <header class="masthead" style="background-image:url('<?php echo $poze[0]; ?>'); background-repeat:no-repeat; background-position: center;">
+    <header class="masthead" style="background-image:url('<?php echo $post->cover; ?>'); background-repeat:no-repeat; background-position: center;">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="post-heading">
                         <h1><?php echo $post->titlu ?></h1>
-                        <h2 class="subheading"><?php $subtitle[0] ?></h2><span class="meta">Posted by&nbsp;<a href="https://www.facebook.com/muzeultecucean.antoncincu.1" target="_blank">Daniel Dojan</a>&nbsp;on <?php echo $post->data ?></span>
+                        <h2 class="subheading"><?php $subtitle[0] ?></h2><span class="meta">Posted by&nbsp; <?php echo $post->user; ?> &nbsp;on <?php echo $post->data ?></span>
                     </div>
                 </div>
             </div>
@@ -343,7 +343,7 @@ $inceput = 0;
 
                 </div>
                 <figure>
-                <br><br><br><br>
+                    <br><br><br><br>
 
                     <blockquote class="blockquote">
                         <p class="mb-0">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</p>
