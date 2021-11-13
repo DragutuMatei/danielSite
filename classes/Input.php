@@ -38,9 +38,10 @@ class Input
         $urls = array();
         // foreach ($names as $name) {
         // foreach($name)
-        $rez = $r->upload($names["imagini"], ['folder' => $folder]);
-        // array_push($urls, $rez['secure_url']);
-        // }
+        for ($i = 0; $i < count($names['imagini']); $i++) {
+            $rez = $r->upload($names["imagini"][$i], ['folder' => $folder]);
+            array_push($urls, $rez['secure_url']);
+        }
         return $rez;
     }
 }
