@@ -30,10 +30,10 @@ $GLOBALS['config'] = array(
 
 
 spl_autoload_register(function ($class) {
-    try {
-        require_once './classes/' . $class . '.php';
-    } catch (Error $e) {
-        require_once '../classes/' . $class . '.php';
+    if (file_exists('./classes/' . $class . '.php')) {
+        require_once './classes/' . $class . ".php";
+    } else {
+        require_once '../classes/' . $class . ".php";
     }
 });
 
