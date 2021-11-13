@@ -37,6 +37,7 @@ class Input
         $r = new UploadApi();
         $urls = array();
         for ($i = 0; $i < count($names['imagini']['tmp_name']); $i++) {
+            echo $names["imagini"]['tmp_name'][$i];
             $rez = $r->upload($names["imagini"]['tmp_name'][$i], ['folder' => $folder]);
             array_push($urls, $rez['secure_url']);
         }

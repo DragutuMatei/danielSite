@@ -32,8 +32,9 @@ $posts = $user->getAll();
 <body>
     <form style="display:flex;flex-direction:column;justify-content:center;align-items:center" action="api/admin.api.php" method="POST" enctype="multipart/form-data">
         <input required type="text" name="titlu" placeholder="Titlu">
-        <textarea required name="subtitluri" id="" cols="30" rows="10"></textarea>
-        <textarea required name="txt" id="" cols="30" rows="10"></textarea>
+        <input required type="text" name="user" placeholder="user">
+        <textarea required name="subtitluri" placeholder="subtitluri" id="" cols="30" rows="10"></textarea>
+        <textarea required name="txt" placeholder="descrieri" id="" cols="30" rows="10"></textarea>
         <select required name="sectiune" id="">
             <optgroup label="Sectiuni">
                 <option value="paleontologie">Paleontologie</option>
