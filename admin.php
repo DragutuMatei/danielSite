@@ -59,6 +59,7 @@ $posts = $user->getAll();
                 <option value="diverse">Diverse</option>
             </optgroup>
         </select>
+        <input required type="file" name="cover" multiple>
         <input required type="file" name="imagini[]" multiple>
         <input required type="date" name="data">
         <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">

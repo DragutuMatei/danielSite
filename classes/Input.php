@@ -43,7 +43,7 @@ class Input
             }
             return $urls;
         } else {
-            $rez = $r->upload($_FILES["imagini"]['tmp_name'], ['folder' => $folder]);
+            $rez = $r->upload($_FILES["cover"]['tmp_name'], ['folder' => $folder]);
             return $rez['secure_url'];
         }
     }
