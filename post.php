@@ -44,7 +44,7 @@ $inceput = 0;
 <body>
     <?php require_once 'navbar.php'; ?>
 
-    <header class="masthead" style="background-image:url('<?php echo $poze[0]; ?>');">
+    <header class="masthead" style="background-image:url('<?php echo $poze[0]; ?>'); background-repeat:no-repeat; background-position: center;">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
