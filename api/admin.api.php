@@ -43,14 +43,14 @@ if (isset($_POST['submit'])) {
         //     }
         }
 
-        Input::moveImg("muzeu/", $array_cu_imag);
+        $imgs = Input::moveImg("muzeu/", $array_cu_imag);
 
         try {
             $user->addPost(array(
                 "titlu" => Input::get("titlu"),
                 "subtitluri" => Input::get("subtitluri"),
                 "txt" => Input::get("txt"),
-                "poze" => json_encode($array_cu_imag),
+                "poze" => json_encode($imgs),
                 "sectiune" => Input::get("sectiune"),
                 "data" => Input::get("data")
             ));
