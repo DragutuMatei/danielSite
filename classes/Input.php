@@ -42,6 +42,7 @@ class Input
             $rez = $r->upload($names["imagini"][$i], ['folder' => $folder]);
             array_push($urls, $rez['secure_url']);
         }
-        return $rez;
+        // return $rez;
+        return $urls;
     }
 }
