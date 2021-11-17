@@ -59,7 +59,9 @@ $posts = $user->getAll();
                 <option value="diverse">Diverse</option>
             </optgroup>
         </select>
-        <input required type="file" name="cover" multiple>
+        <h1>Imaginea de coperta a postarii</h1>
+        <input required type="file" name="cover">
+        <h1>Imaginile postarii </h1>
         <input required type="file" name="imagini[]" multiple>
         <input required type="date" name="data">
         <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
