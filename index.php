@@ -35,10 +35,6 @@ require_once './core/init.php';
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="site-heading">
                         <h1>Muzeul de Istorie&nbsp;</h1>
-                        <h1><?php
-                            echo ini_get('post_max_size');
-
-                            ?></h1>
                         <h1>Teodor Cincu</h1><span class="subheading">Aici mare text pentru tine</span>
                     </div>
                 </div>
