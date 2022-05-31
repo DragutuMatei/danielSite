@@ -6,8 +6,9 @@ use Cloudinary\Api\Upload\UploadApi;
 use Cloudinary\Transformation\Transformation;
 use Cloudinary\Transformation\Crop;
 use Cloudinary\Transformation\CompassGravity;
+use Cloudinary\Transformation\Quality;
 use Cloudinary\Transformation\Gravity;
-
+use Cloudinary\Transformation\ChromaSubSampling;
 
 
 class Input
@@ -50,10 +51,16 @@ class Input
             $rez = $r->upload($_FILES["cover"]['tmp_name'], ['folder' => $folder,
             [
                 (new Transformation())->resize(
-                    Crop::thumbnail(200, 200)->gravity(Gravity::face(CompassGravity::center()))
+                    Crop::thumbnail(100, 100)->gravity(Gravity::face(CompassGravity::center()))
                 ),
                 ' (new Transformation())->resize(
-                    Crop::thumbnail(200, 200)->gravity(Gravity::face(CompassGravity::center()))
+                    Crop::thumbnail(100, 100)->gravity(Gravity::face(CompassGravity::center()))
+                )',
+                (new Transformation())->quality(
+                    Quality::level(50)->chromaSubSampling(ChromaSubSampling::chroma420())
+                ),
+                ' (new Transformation())->quality(
+                    Quality::level(50)->chromaSubSampling(ChromaSubSampling::chroma420())
                 )',
             ],]);
             return $rez['secure_url'];
