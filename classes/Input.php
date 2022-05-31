@@ -3,6 +3,10 @@
 require_once '../initCloudinary.php';
 
 use Cloudinary\Api\Upload\UploadApi;
+use Cloudinary\Transformation\Transformation;
+use Cloudinary\Transformation\Crop;
+use Cloudinary\Transformation\CompassGravity;
+use Cloudinary\Transformation\Gravity;
 
 
 
@@ -43,7 +47,15 @@ class Input
             }
             return $urls;
         } else {
-            $rez = $r->upload($_FILES["cover"]['tmp_name'], ['folder' => $folder]);
+            $rez = $r->upload($_FILES["cover"]['tmp_name'], ['folder' => $folder,
+            [
+                (new Transformation())->resize(
+                    Crop::thumbnail(200, 200)->gravity(Gravity::face(CompassGravity::center()))
+                ),
+                ' (new Transformation())->resize(
+                    Crop::thumbnail(200, 200)->gravity(Gravity::face(CompassGravity::center()))
+                )',
+            ],]);
             return $rez['secure_url'];
         }
     }
