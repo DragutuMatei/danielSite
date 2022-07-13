@@ -26,7 +26,7 @@
     }
 
     .navbar-nav {
-        >li.nav-item {
+        >.nav-item {
             >a.nav-link {
                 font-size: 0.75rem;
                 font-weight: $headings-font-weight;
@@ -53,7 +53,7 @@
         }
 
         .navbar-nav {
-            >li.nav-item {
+            >.nav-item {
                 >a.nav-link {
                     color: $white;
 
@@ -101,7 +101,7 @@
             }
 
             .navbar-nav {
-                >li.nav-item {
+                >.nav-item {
                     >a {
                         color: $body-color;
 
