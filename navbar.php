@@ -2,6 +2,25 @@
     *::first-letter {
         text-transform: uppercase;
     }
+
+    .dropdown-submenu {
+    position: relative;
+  }
+  
+  .dropdown-submenu a::after {
+    transform: rotate(-90deg);
+    position: absolute;
+    right: 6px;
+    top: .8em;
+  }
+  
+  .dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+  }
+
+
 </style>
 <nav class="navbar navbar-light navbar-expand-lg fixed-top" style="height: 80px;" id="mainNav">
     <div class="container-fluid">
