@@ -34,8 +34,9 @@ require_once './core/init.php';
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="site-heading">
-                        <h1>Muzeul de Istorie&nbsp;</h1>
-                        <h1>Teodor Cincu</h1><span class="subheading">Aici mare text pentru tine</span>
+                        <h1>MUZEUL DE ISTORIE „TEODOR CINCU” TECUCI </h1>
+                        <h1>„Întru luminarea minții și cultivarea sufletului” </h1>
+                        <span class="subheading">Teodor Cincu, 1934</span>
                     </div>
                 </div>
             </div>
