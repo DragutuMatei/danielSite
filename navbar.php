@@ -96,7 +96,7 @@
             <li class="nav-item dropdown">
                 <a aria-expanded="false" data-bs-toggle="dropdown" id="navbarColectii" class="dropdown-toggle text-uppercase" href="#">Colectii
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarColectii">
+                <!-- <ul class="dropdown-menu" aria-labelledby="navbarColectii">
                     <li><a class="dropdown-item" href="colectie.php?sect=paleontologie">Paleontologie</a></li>
                     <li class="dropdown-submenu">
                         <a class="dropdown-item dropdown-toggle" href="colectie.php?sect=arheologie">Arheologie</a>
@@ -114,7 +114,7 @@
                     <li><a class="dropdown-item" href="colectie.php?sect=etnografie">Etnografie</a></li>
                     <li><a class="dropdown-item" href="colectie.php?sect=donatii">Donatii si donatori</a></li>
                     <li><a class="dropdown-item" href="colectie.php?sect=aumobilul">Aumobilul Ego</a></li>
-                </ul>
+                </ul> -->
             </li>
             </li><!-- End: Sectiuni -->
 
