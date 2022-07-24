@@ -15,17 +15,14 @@ switch ($sect) {
     case 'numismatica':
         $path = "Sectiuni / Numistimatică";
         break;
-    case 'etnografie':
-        $path = "Sectiuni / Etnografie";
-        break;
-    case 'automobilul':
-        $path = "Sectiuni / Automobilul Ego";
+    case 'istorie':
+        $path = "Sectiuni / Istorie";
         break;
     case 'arta':
         $path = "Sectiuni / Arta";
         break;
-    case 'donatii':
-        $path = "Sectiuni / Donații și donatori";
+    case 'educatie':
+        $path = "Sectiuni / Educatie muzeala";
         break;
     case '2015':
         $path = "Evenimente / 2015";
@@ -58,6 +55,8 @@ switch ($sect) {
         $path = "Arhiva Online / Diverse";
         break;
 }
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -83,8 +82,8 @@ switch ($sect) {
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="site-heading">
-                        <h1>Muzeul de Istorie&nbsp;</h1>
-                        <h1>Teodor Cincu</h1>
+                        <h1>Muzeul de istorie&nbsp;</h1>
+                        <h1>Anton Cincu</h1>
                         <span class="subheading">
                             <?php
                             echo $path;
@@ -109,7 +108,7 @@ switch ($sect) {
                                     <h2 class="post-title">' . $post->titlu . '</h2>
                                     <h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3>
                                 </a>
-                                <p class="post-meta">A fost postat de '.$post->user.'</p>
+                                <p class="post-meta">A fost postat de <a href="https://www.facebook.com/muzeultecucean.antoncincu.1" target="_blank">Daniel Dojan</a></p>
                             </div>
                             <hr>';
                 }

@@ -46,7 +46,7 @@ require_once './core/init.php';
     <!-- Start: 1 Row 2 Columns -->
     <div class="container">
         <div class="row">
-            <div class="col-md-6"><img style="width: 100%;" src="assets/img/Statueta-Muzeul-de-Istorie-Tecuci.png"></div>
+            <div class="col-md-6"><img style="width: 100%;" src="assets/img/muzeucincu-inainte-02.jpg"></div>
             <div class="col-md-6">
                 <h3 style="color: #0085a1;text-align: center;font-family: 'Lora',serif;">SCURT ISTORIC</h3>
                 <h2 style="text-align: center;font-family: 'Poppins',sans-serif;"><br><strong>MUZEUL DE ISTORIE „TEODOR CINCU” TECUCI</strong><br><br></h2>
