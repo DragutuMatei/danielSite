@@ -7,26 +7,50 @@ $path = "";
 
 switch ($sect) {
     case 'paleontologie':
-        $path = "Sectiuni / paleontologie";
+        $path = "Colecții / paleontologie";
         break;
     case 'arheologie':
-        $path = "Sectiuni / Arheologie";
+        $path = "Colecții / Arheologie";
         break;
     case 'numismatica':
-        $path = "Sectiuni / Numistimatică";
+        $path = "Colecții / Numistimatică";
         break;
     case 'etnografie':
-        $path = "Sectiuni / Etnografie";
+        $path = "Colecții / Etnografie";
         break;
     case 'automobilul':
-        $path = "Sectiuni / Automobilul Ego";
+        $path = "Colecții / Automobilul Ego";
         break;
     case 'arta':
-        $path = "Sectiuni / Arta";
+        $path = "Colecții / Arta";
         break;
     case 'donatii':
-        $path = "Sectiuni / Donații și donatori";
+        $path = "Colecții / Donații și donatori";
         break;
+    case 'eneolitic':
+        $path = "Colecții / Arheologie / Eneolitic cucuteni";
+        break;
+    
+    case 'epocabronz':
+        $path = "Colecții / Arheologie / Epoca bronzului";
+        break;
+    
+    case 'getodacica':
+        $path = "Colecții / Arheologie / Civilizația geto-dacica";
+        break;
+    
+    case 'culturamures':
+        $path = "Colecții / Arheologie / Cultura Sântana de Mureș sec. IV";
+        break;
+    
+    case 'negrilesti':
+        $path = "Colecții / Arheologie / Situl Negrilesti";
+        break;
+    
+    case 'situri':
+        $path = "Colecții / Arheologie / Siturile arheologice din Tecuci";
+        break;
+    
     case '2015':
         $path = "Evenimente / 2015";
         break;
