@@ -63,22 +63,34 @@
                     <a aria-expanded="false" data-bs-toggle="dropdown" class="dropdown-toggle text-uppercase" href="#">Colectii
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="colectie.php?sect=paleontologie">Paleontologie</a></li>
+                        <!-- <li><a class="dropdown-item" href="colectie.php?sect=paleontologie">Paleontologie</a></li> -->
+                        <li><a class="dropdown-item" href="paleontologie.php">Paleontologie</a></li>
                         <li><a class="dropdown-item" href="colectie.php?sect=arheologie">Arheologie &raquo;</a>
                             <ul class="submenu dropdown-menu">
-                                <li><a class="dropdown-item" href="colectie.php?sect=eneolitic">Eneolitic cucuteni</a></li>
-                                <li><a class="dropdown-item" href="colectie.php?sect=epocabronz">Epoca bronzului</a></li>
-                                <li><a class="dropdown-item" href="colectie.php?sect=getodacica">Civilizația geto-dacica</a></li>
-                                <li><a class="dropdown-item" href="colectie.php?sect=culturamures">Cultura Sântana de Mureș sec. IV</a></li>
-                                <li><a class="dropdown-item" href="colectie.php?sect=negrilesti">Situl Negrilesti</a></li>
-                                <li><a class="dropdown-item" href="colectie.php?sect=situri">Siturile arheologice din Tecuci</a></li>
+                                <!-- <li><a class="dropdown-item" href="colectie.php?sect=eneolitic">Eneolitic cucuteni</a></li> -->
+                                <li><a class="dropdown-item" href="eneolitic.php">Eneolitic cucuteni</a></li>
+                                <!-- <li><a class="dropdown-item" href="colectie.php?sect=epocabronz">Epoca bronzului</a></li> -->
+                                <li><a class="dropdown-item" href="bronz.php">Epoca bronzului</a></li>
+                                <!-- <li><a class="dropdown-item" href="colectie.php?sect=getodacica">Civilizația geto-dacica</a></li> -->
+                                <li><a class="dropdown-item" href="getodacica.php">Civilizația geto-dacica</a></li>
+                                <!-- <li><a class="dropdown-item" href="colectie.php?sect=culturamures">Cultura Sântana de Mureș sec. IV</a></li> -->
+                                <li><a class="dropdown-item" href="culturamures.php">Cultura Sântana de Mureș sec. IV</a></li>
+                                <!-- <li><a class="dropdown-item" href="colectie.php?sect=negrilesti">Situl Negrilesti</a></li> -->
+                                <li><a class="dropdown-item" href="negrilesti.php">Situl Negrilesti</a></li>
+                                <!-- <li><a class="dropdown-item" href="colectie.php?sect=situri">Siturile arheologice din Tecuci</a></li> -->
+                                <li><a class="dropdown-item" href="situri.php">Siturile arheologice din Tecuci</a></li>
                             </ul>
                         </li>
-                        <li><a class="dropdown-item" href="colectie.php?sect=numismatica">Numismatică</a></li>
-                        <li><a class="dropdown-item" href="colectie.php?sect=arta">Artă</a></li>
-                        <li><a class="dropdown-item" href="colectie.php?sect=etnografie">Etnografie</a></li>
-                        <li><a class="dropdown-item" href="colectie.php?sect=donatii">Donații și donatori</a></li>
-                        <li><a class="dropdown-item" href="colectie.php?sect=automobilul">Automobilul Ego</a></li>
+                        <!-- <li><a class="dropdown-item" href="colectie.php?sect=numismatica">Numismatică</a></li> -->
+                        <li><a class="dropdown-item" href="numismatica.php">Numismatică</a></li>
+                        <!-- <li><a class="dropdown-item" href="colectie.php?sect=arta">Artă</a></li> -->
+                        <li><a class="dropdown-item" href="arta.php">Artă</a></li>
+                        <!-- <li><a class="dropdown-item" href="colectie.php?sect=etnografie">Etnografie</a></li> -->
+                        <li><a class="dropdown-item" href="etnografie.php">Etnografie</a></li>
+                        <!-- <li><a class="dropdown-item" href="colectie.php?sect=donatii">Donații și donatori</a></li> -->
+                        <li><a class="dropdown-item" href="donatii.php">Donații și donatori</a></li>
+                        <!-- <li><a class="dropdown-item" href="colectie.php?sect=automobilul">Automobilul Ego</a></li> -->
+                        <li><a class="dropdown-item" href="automobil.php">Automobilul Ego</a></li>
 
                     </ul>
                 </li><!-- End: Test -->
