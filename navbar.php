@@ -28,6 +28,21 @@
 /* ============ small devices .end// ============ */
 
 </style>
+
+<script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+<script>
+// optional init
+  window.onload = function() {
+    window.micAccessTool = new MicAccessTool({
+      link: 'accessibility.php',
+      contact: 'mailto:contact@muzeul-tecuci.ro',
+      buttonPosition: 'right', // default is 'left'
+      forceLang: 'ro-RO' // default is 'en' may be 'he-IL', 'ru-RU', or 'fr_FR'
+    });
+  }
+</script>
+
+
 <nav class="navbar navbar-light navbar-expand-lg fixed-top" style="height: 80px;" id="mainNav">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php">
