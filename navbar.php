@@ -35,7 +35,7 @@
   window.onload = function() {
     window.micAccessTool = new MicAccessTool({
       link: 'accessibility.php',
-      contact: 'mailto:contact@muzeul-tecuci.ro',
+      contact: 'mailto:muzeultecuci@yahoo.com',
       buttonPosition: 'right', // default is 'left'
       forceLang: 'ro-RO' // default is 'en' may be 'he-IL', 'ru-RU', or 'fr_FR'
     });
