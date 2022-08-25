@@ -35,7 +35,7 @@
 
 // })(); // End of use strict
 window.addEventListener('DOMContentLoaded', () => {
-  let scrollPos = 0;
+  let scrollPos = 50;
   const mainNav = document.getElementById('mainNav');
   const headerHeight = mainNav.clientHeight;
   window.addEventListener('scroll', function() {

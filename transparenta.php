@@ -18,7 +18,7 @@ require_once './core/init.php';
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-reboot.compiled.css">
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-utilities.compiled.css">
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.compiled.css">
-    <link rel="stylesheet" href="assets/css/styles.compiled.css">
+    <link rel="stylesheet" href="assets/scss/styles.css">
 </head>
 
 <body>

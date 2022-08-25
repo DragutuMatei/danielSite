@@ -17,26 +17,7 @@ require_once './core/init.php';
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-reboot.compiled.css">
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-utilities.compiled.css">
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.compiled.css">
-    <link rel="stylesheet" href="assets/css/styles.compiled.css">
-
-    <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        td,
-        th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/scss/styles.css">
 
 </head>
 
