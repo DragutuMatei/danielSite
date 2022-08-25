@@ -38,7 +38,14 @@ require_once './core/init.php';
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-lg-8 mx-auto">
-                <p><br><strong>Muzeul de Istorie „Teodor Cincu”</strong><br>Str. 1 Decembrie 1918, nr. 36, Tecuci, 805300, jud. Galaţi<br>tel/fax. +40 236.811.672<br><br></p>
+                <p><br><strong>Muzeul de Istorie „Teodor Cincu”</strong><br>Str. 1 Decembrie 1918, nr. 36, Tecuci, 805300, jud. Galaţi<br>tel/fax. 0236 811 672<br>e-mail: muzeultecuci@yahoo.com<br>Cod Unic de Înregistrare: 5569881<br>
+                
+                Pagina de facebook: <a href="https://www.facebook.com/muzeuldeistorietecuci">Muzeul Teodor Cincu</a><br>
+                Cont instagram: <a href="https://www.instagram.com/muzeul_teodor_cincu/">muzeul_teodor_cincu</a><br>
+                Canal YouTube: <a href="https://www.youtube.com/channel/UCdO2EAqfyx5kx9VJfQjyRaA/videos">MuzeuldeIstorieTeodorCincu</a><br>
+                Cont program educațional: (facebook) <a href="https://www.facebook.com/Clubul-de-Istorie-Excelsior-2025074697815899">Clubul de Istorie Excelsior</a> (instagram) <a href="https://www.instagram.com/excelsiortecuci/">excelsiortecuci</a>
+                
+                <br><br></p>
                 <form id="contactForm" name="sentMessage" novalidate="novalidate">
                     <div class="control-group">
                         <div class="form-floating controls mb-3"><input class="form-control" type="text" id="name" required="" placeholder="Name"><label class="form-label" for="name">Nume</label><small class="form-text text-danger help-block"></small></div>
@@ -59,7 +66,7 @@ require_once './core/init.php';
         </div>
     </div>
     <hr>
-    
+
     <?php require_once './footer.php';  ?>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/clean-blog.js"></script>
