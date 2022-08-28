@@ -3,12 +3,21 @@ require_once './core/init.php';
 
 $id = $_GET['id'];
 $user = new User();
-$post = $user->getPost($id);
+
+if (isset($_GET['ev']) ) {
+    $post = $user->getEvent($id);
+} else {
+    $post = $user->getPost($id);
+}
+
 $subtitle  = explode(";", $post->subtitluri);
 $txt = explode(";", $post->txt);
 $poze = json_decode($post->poze);
 $numar_slider = 0;
 $inceput = 0;
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,7 +60,8 @@ $inceput = 0;
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="post-heading">
                         <h1><?php echo $post->titlu ?></h1>
-                        <h2 class="subheading"><?php $subtitle[0] ?></h2><span class="meta">Posted by&nbsp; <?php echo $post->user; ?> &nbsp;on <?php echo $post->data ?></span>
+                        <h2 class="subheading"><?php $subtitle[0] ?></h2>
+                        <span class="meta">Posted on <?php echo $post->data ?></span>
                     </div>
                 </div>
             </div>

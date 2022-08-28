@@ -1,22 +1,28 @@
 <?php
 session_start();
 
-$cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$cleardb_server = $cleardb_url["host"];
-$cleardb_username = $cleardb_url["user"];
-$cleardb_password = $cleardb_url["pass"];
-$cleardb_db = substr($cleardb_url["path"], 1);
-$active_group = 'default';
-$query_builder = TRUE;
+// $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+// $cleardb_server = $cleardb_url["host"];
+// $cleardb_username = $cleardb_url["user"];
+// $cleardb_password = $cleardb_url["pass"];
+// $cleardb_db = substr($cleardb_url["path"], 1);
+// $active_group = 'default';
+// $query_builder = TRUE;
 
 
 
 $GLOBALS['config'] = array(
     'mysql' => array(
-        'host' => $cleardb_server,
-        "username" => $cleardb_username,
-        'password' => $cleardb_password,
-        'db' => 'heroku_32e2961b360ef01'
+        //pt apl hostata
+        // 'host' => $cleardb_server,
+        // "username" => $cleardb_username,
+        // 'password' => $cleardb_password,
+        // 'db' => 'heroku_32e2961b360ef01'
+        //pentru localhost la mn
+        'host' => "localhost",
+        "username" => "root",
+        'password' => "",
+        'db' => 'muzeu'
     ),
     'remember' => array(
         'cookie_name' => 'hash',

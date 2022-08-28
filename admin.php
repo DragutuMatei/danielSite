@@ -5,6 +5,9 @@ if (!isset($_SESSION["admin"]))
     Redirect::to("redirect.php");
 $user = new User();
 $posts = $user->getAll();
+
+$events = $user->getAllEv();
+
 ?>
 
 <!DOCTYPE html>
@@ -32,10 +35,10 @@ $posts = $user->getAll();
 <body>
     <form style="display:flex;flex-direction:column;justify-content:center;align-items:center" action="api/admin.api.php" method="POST" enctype="multipart/form-data">
         <input required type="text" name="titlu" placeholder="Titlu">
-        <input required type="text" name="user" placeholder="user">
+        <!-- <input required type="text" name="user" placeholder="user"> -->
         <textarea required name="subtitluri" placeholder="subtitluri" id="" cols="30" rows="10"></textarea>
         <textarea required name="txt" placeholder="descrieri" id="" cols="30" rows="10"></textarea>
-        <select required name="sectiune" id="">
+        <!-- <select required name="sectiune" id="">
             <optgroup label="Sectiuni">
                 <option value="paleontologie">Paleontologie</option>
                 <option value="arheologie">Arheologie</option>
@@ -58,7 +61,7 @@ $posts = $user->getAll();
                 <option value="materiale">Materiale Informative</option>
                 <option value="diverse">Diverse</option>
             </optgroup>
-        </select>
+        </select> -->
         <h1>Imaginea de coperta a postarii</h1>
         <input required type="file" name="cover">
         <h1>Imaginile postarii </h1>
@@ -84,10 +87,59 @@ $posts = $user->getAll();
     }
     ?>
 
+    <br><br><br><br><br><br><br>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <form style="display:flex;flex-direction:column;justify-content:center;align-items:center" action="api/admin.api.php" method="POST" enctype="multipart/form-data">
+        <input required type="text" name="titlu" placeholder="Titlu">
+        <!-- <input required type="text" name="user" placeholder="user"> -->
+        <textarea required name="subtitluri" placeholder="subtitluri" id="" cols="30" rows="10"></textarea>
+        <textarea required name="txt" placeholder="descrieri" id="" cols="30" rows="10"></textarea>
+
+        <select id="an" name="an" required>
+            <option value=""></option>
+        </select>
+
+        <script>
+            const an_html_element = document.querySelector("#an");
+            const an = new Date().getFullYear();
+
+            an_html_element.innerHTML = "<option value=''>Alege un an</option>";
+
+            for (let i = 2015; i <= an; i++) {
+                let optionTag = "<option value='" + i + "'>" + i + "</option>";
+                an_html_element.innerHTML += optionTag;
+            }
+        </script>
+
+
+        <h1>Imaginea de coperta a eventimentului</h1>
+        <input required type="file" name="cover">
+        <h1>Imaginile eventimentului </h1>
+        <input required type="file" name="imagini[]" multiple>
+        <input required type="date" name="data">
+        <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
+        <input type="submit" value="adauga" name="ev">
+    </form>
+
     <?php
-    
-
-
+    foreach ($events as $ev) {
+        echo ' <div class="post-preview">
+                <a href="post.php?ev=true&id=' . $ev->id . '">
+                    <h2 class="post-title">' . $ev->titlu . '</h2>
+                    <h3 class="post-subtitle">' . explode(";", $ev->subtitluri)[0] . '&nbsp;</h3>
+                </a>
+                <form action="api/admin.api.php" method="POST">
+                    <input type="hidden" name="id" value="' . $ev->id . '" >
+                    <button style="background:none;" type="submit" name="delete_an"> <i class="fas fa-trash-alt"></i> </button>
+                </form>
+            </div>
+            <hr>';
+    }
+    ?>
+    <?php
     require_once './footer.php';  ?>
 </body>
 
