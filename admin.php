@@ -53,7 +53,7 @@ $events = $user->getAllEv();
             <div class="col-md-10 col-lg-8 mx-auto">
                 <p><br><strong>De aici poți adăuga postări</strong></p>
 
-                <form style="display:flex;flex-direction:column;justify-content:center;align-items:center" action="api/admin.api.php" method="POST" enctype="multipart/form-data">
+                <form style="justify-content:center;align-items:center" action="api/admin.api.php" method="POST" enctype="multipart/form-data">
 
                     <div class="control-group">
                         <div class="form-floating controls mb-3">
@@ -112,6 +112,8 @@ $events = $user->getAllEv();
                     <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
                     <input type="submit" value="adauga" name="submit">
                 </form>
+
+                <p><br><strong>Lista cu postarile:</strong></p>
 
                 <?php
                 foreach ($posts as $post) {
