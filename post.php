@@ -15,9 +15,6 @@ $txt = explode(";", $post->txt);
 $poze = json_decode($post->poze);
 $numar_slider = 0;
 $inceput = 0;
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
