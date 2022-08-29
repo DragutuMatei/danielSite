@@ -1,7 +1,7 @@
 <?php
 class User
 {
-    private $_db, $_data, $_sessionName;
+    private $_db, $_data, $_sessionName, $_count= 0 ;
     public $_isLoggedIn = false;
 
     public function __construct()
@@ -48,7 +48,7 @@ class User
     }
 
 
-    
+
     public function addEvent($fields = array())
     {
         if (!$this->_db->insert("events", $fields)) {
@@ -84,10 +84,13 @@ class User
     public function getEventsBy($sect)
     {
         $posts = $this->_db->get("events", array("an", "=", $sect), "ORDER BY data DESC");
+        
         return $posts->results();
+
     }
 
-
-
-
+    public function getCount()
+    {
+        return $this->_db->count();
+    }
 }

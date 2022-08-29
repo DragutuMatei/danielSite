@@ -4,9 +4,15 @@ require_once 'core/init.php';
 if (!isset($_SESSION["admin"]))
     Redirect::to("redirect.php");
 $user = new User();
+
 $posts = $user->getAll();
 
+// echo $user->getCount();
+
 $events = $user->getAllEv();
+
+// echo $user->getCount();
+
 
 ?>
 
@@ -162,14 +168,14 @@ $events = $user->getAllEv();
                     </div><!-- End: Descrieri -->
                     <div class="control-group">
                         <div class="form-floating controls mb-3">
-                            <select class="form-select" id="an" name="an" required>
-                                <option value=""></option>
+                            <select class="form-select" id="an_select" name="an" required>
                             </select>
 
 
                             <script>
-                                const an_html_element = document.querySelector("#an");
+                                const an_html_element = document.querySelector("#an_select");
                                 const an = new Date().getFullYear();
+                                console.log(an_html_element)
 
                                 an_html_element.innerHTML = "<option value=''>Alege un an</option>";
 

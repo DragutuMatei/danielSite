@@ -120,14 +120,14 @@
                     </div>
 
                     <script>
-                        const an_html_element = document.querySelector("#an");
-                        const an = new Date().getFullYear();
+                        const an_html_element_nav = document.querySelector("#an");
+                        const an_nav = new Date().getFullYear();
 
-                        an_html_element.innerHTML = "<a class='dropdown-item' href='colectie.php?sect=2015'>2015</a>";
+                        // an_html_element_nav.innerHTML = "<a class='dropdown-item' href='colectie.php?sect=2015'>2015</a>";
 
-                        for (let i = 2016; i <= an; i++) {
+                        for (let i = 2015; i <= an_nav; i++) {
                             let optionTag = "<a class='dropdown-item' href='colectie.php?sect=" + i + "'>" + i + "</a>";
-                            an_html_element.innerHTML += optionTag;
+                            an_html_element_nav.innerHTML += optionTag;
                         }
                     </script>
 
