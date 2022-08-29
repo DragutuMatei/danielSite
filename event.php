@@ -9,6 +9,9 @@ $post = $user->getEvent($id);
 $subtitle  = explode(";", $post->subtitluri);
 $txt = explode(";", $post->txt);
 $poze = json_decode($post->poze);
+
+$an = $post->an;
+
 $numar_slider = 0;
 $inceput = 0;
 ?>
@@ -54,6 +57,7 @@ $inceput = 0;
                     <div class="post-heading">
                         <h1><?php echo $post->titlu ?></h1>
                         <h2 class="subheading"><?php $subtitle[0] ?></h2>
+                        <span class="meta">Event din anul <?php echo $post->an ?></span>
                         <span class="meta">Posted on <?php echo $post->data ?></span>
                     </div>
                 </div>
@@ -345,13 +349,6 @@ $inceput = 0;
 
 
                 </div>
-                <figure>
-                    <br><br><br><br>
-
-                    <blockquote class="blockquote">
-                        <p class="mb-0">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</p>
-                    </blockquote>
-                </figure>
     </article>
     <?php require_once './footer.php';  ?>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>

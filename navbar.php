@@ -126,7 +126,7 @@
                         // an_html_element_nav.innerHTML = "<a class='dropdown-item' href='colectie.php?sect=2015'>2015</a>";
 
                         for (let i = 2015; i <= an_nav; i++) {
-                            let optionTag = "<a class='dropdown-item' href='colectie.php?sect=" + i + "'>" + i + "</a>";
+                            let optionTag = "<a class='dropdown-item' href='events.php?currentpage=1&an=" + i + "'>" + i + "</a>";
                             an_html_element_nav.innerHTML += optionTag;
                         }
                     </script>
@@ -151,7 +151,7 @@
                     </div>
                 </li>
 
-                <li class="nav-item"><a class="nav-link" href="Blog.php">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
 
                 <li class="nav-item dropdown">
                     <a aria-expanded="false" data-bs-toggle="dropdown" class="dropdown-toggle text-uppercase" href="#">Arhiva Online

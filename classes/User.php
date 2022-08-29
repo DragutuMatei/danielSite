@@ -28,7 +28,12 @@ class User
         $posts = $this->_db->get("blog", array("id", ">", "0"), "ORDER BY data DESC LIMIT 6");
         return $posts->results();
     }
-
+    public function getBlogPosts($offset, $rowsperpage)
+    {
+        $posts = $this->_db->get("blog", array("id", ">", "0"), "ORDER BY data DESC LIMIT $offset, $rowsperpage");
+        return $posts->results();
+    }
+    
     public function getPost($id)
     {
         $post = $this->_db->get("blog", array("id", "=", $id));
@@ -88,6 +93,13 @@ class User
         return $posts->results();
 
     }
+
+    public function getBlogEvents($anul, $offset, $rowsperpage)
+    {
+        $posts = $this->_db->get("events", array("an", "=", $anul), "ORDER BY data DESC LIMIT $offset, $rowsperpage");
+        return $posts->results();
+    }
+    
 
     public function getCount()
     {

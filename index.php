@@ -175,7 +175,7 @@ require_once './core/init.php';
             <div class="row" data-aos="fade-up">
                 <?php
                 $user = new User();
-                $events = $user->getAllEv();
+                $events = $user->getEvents();
                 foreach ($events as $ev) {
                     echo ' <div class="post-preview">
                     <a href="event.php?id=' . $ev->id . '">

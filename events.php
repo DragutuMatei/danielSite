@@ -4,7 +4,12 @@ require_once './core/init.php';
 
 $user = new User();
 
-$posts = $user->getAll();
+if (isset($_GET['an'])) {
+    // cast var as int
+    $anul_evenimentului = (int) $_GET['an'];
+}
+
+$posts = $user->getEventsBy($anul_evenimentului);
 $numar = $user->getCount();
 
 
@@ -36,7 +41,7 @@ if ($currentpage < 1) {
 // the offset of the list, based on current page 
 $offset = ($currentpage - 1) * $rowsperpage;
 
-$posts = $user->getBlogPosts($offset, $rowsperpage);
+$posts = $user->getBlogEvents($anul_evenimentului ,$offset, $rowsperpage);
 
 ?>
 <!DOCTYPE html>
@@ -86,7 +91,7 @@ $posts = $user->getBlogPosts($offset, $rowsperpage);
 
     <br><br>
     <br><br>
-    <h2 style="color: #0085a1;text-align: center;font-family: 'Lora',serif;"><strong>Toate articolele (<?php echo $numar ?>)</strong><br></h2>
+    <h2 style="color: #0085a1;text-align: center;font-family: 'Lora',serif;"><strong>Toate evenimentele din anul <?php echo $anul_evenimentului ?> (<?php echo $numar ?>)</strong><br></h2>
     <br><br>
     <div class="container">
         <div class="row">
@@ -96,14 +101,24 @@ $posts = $user->getBlogPosts($offset, $rowsperpage);
 
                 foreach ($posts as $post) {
                     echo ' <div class="post-preview">
-                                <a href="post.php?id=' . $post->id . '">
-                                    <h2 class="post-title">' . $post->titlu . '</h2>
-                                    <h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3>
-                                </a>
-                                <p class="post-meta">A fost postat de <a href="https://www.facebook.com/muzeultecucean.antoncincu.1" target="_blank">Daniel Dojan</a></p>
-                            </div>
-                            <hr>';
+                        <a href="event.php?id=' . $post->id . '">
+                            <h2 class="post-title">' . $post->titlu . '</h2>
+                            <h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3>
+                        </a>
+                        </div>
+                        <hr>';
                 }
+
+                // foreach ($posts as $post) {
+                //     echo ' <div class="post-preview">
+                //                 <a href="post.php?id=' . $post->id . '">
+                //                     <h2 class="post-title">' . $post->titlu . '</h2>
+                //                     <h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3>
+                //                 </a>
+                //                 <p class="post-meta">A fost postat de <a href="https://www.facebook.com/muzeultecucean.antoncincu.1" target="_blank">Daniel Dojan</a></p>
+                //             </div>
+                //             <hr>';
+                // }
                 ?>
 
                 <?php
@@ -115,11 +130,11 @@ $posts = $user->getBlogPosts($offset, $rowsperpage);
                 // if not on page 1, don't show back links
                 if ($currentpage > 1) {
                     // show << link to go back to page 1
-                    echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=1'><<</a> ";
+                    echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=1&an=$anul_evenimentului'><<</a> ";
                     // get previous page num
                     $prevpage = $currentpage - 1;
                     // show < link to go back to 1 page
-                    echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=$prevpage'><</a> ";
+                    echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=$prevpage&an=$anul_evenimentului'><</a> ";
                 } // end if 
 
                 // loop to show links to range of pages around current page
@@ -133,7 +148,7 @@ $posts = $user->getBlogPosts($offset, $rowsperpage);
                             // if not current page...
                         } else {
                             // make it a link
-                            echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=$x'>$x</a> ";
+                            echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=$x&an=$anul_evenimentului'>$x</a> ";
                         } // end else
                     } // end if 
                 } // end for
@@ -143,9 +158,9 @@ $posts = $user->getBlogPosts($offset, $rowsperpage);
                     // get next page
                     $nextpage = $currentpage + 1;
                     // echo forward link for next page 
-                    echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=$nextpage'>></a> ";
+                    echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=$nextpage&an=$anul_evenimentului'>></a> ";
                     // echo forward link for lastpage
-                    echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=$totalpages'>>></a> ";
+                    echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=$totalpages&an=$anul_evenimentului'>>></a> ";
                 } // end if
                 /****** end build pagination links ******/
 
