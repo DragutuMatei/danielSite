@@ -132,25 +132,39 @@ require_once './core/init.php';
         <div class="container">
 
             <div class="section-title">
-                <h2>Videos</h2>
+            <h2 style="color: #0085a1;text-align: center;font-family: 'Lora',serif;"><strong>Videoclipuri</strong><br></h2>
             </div>
 
             <div class="row" data-aos="fade-up">
-                <div class="col-md-5">
-                    <img src="assets/img/brevete.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="col-md-7 pt-4">
-                    <h3>Aici o sa fie lista cu video uri</h3>
-                    <p class="fst-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore
-                        magna aliqua.
-                    </p>
-                    <ul>
-                        <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                    </ul>
-                </div>
+                <?php
+
+                $API_Key = 'AIzaSyAvhoUmb4y597K1kJIFoom7BnBV-3yhpp0';
+                $Channel_ID = 'UCdO2EAqfyx5kx9VJfQjyRaA';
+                $Max_Results = 5; 
+ 
+                // Get videos from channel by YouTube Data API 
+                $apiData = @file_get_contents('https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId='.$Channel_ID.'&maxResults='.$Max_Results.'&key='.$API_Key.''); 
+                if($apiData){ 
+                    $videoList = json_decode($apiData); 
+                }else{ 
+                    echo 'Invalid API key or channel ID.'; 
+                }
+               
+                if(!empty($videoList->items)){ 
+                    foreach($videoList->items as $item){ 
+                        // Embed video 
+                        if(isset($item->id->videoId)){ 
+                            echo ' 
+                            <div class="yvideo-box"> 
+                                <iframe width="280" height="150" src="https://www.youtube.com/embed/'.$item->id->videoId.'" frameborder="0" allowfullscreen></iframe> 
+                                <h4>'. $item->snippet->title .'</h4> 
+                            </div>'; 
+                        } 
+                    } 
+                }else{ 
+                    echo '<p class="error">'.$apiError.'</p>'; 
+                }
+               ?>
             </div>
 
             <style>
