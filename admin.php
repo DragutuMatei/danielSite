@@ -58,7 +58,7 @@ $events = $user->getAllEv();
                     <div class="control-group">
                         <div class="form-floating controls mb-3">
                             <input class="border rounded-0 border-1 border-dark form-control" type="text" id="titlu" name="titlu" required placeholder="Titlu">
-                            <label class="form-label" for="name" style="margin: 5px;">Titlu</label>
+                            <label class="form-label" for="titlu" style="margin: 5px;">Titlu</label>
                             <small class="form-text text-danger help-block"></small>
                         </div>
                     </div>
@@ -136,38 +136,80 @@ $events = $user->getAllEv();
                 <hr>
                 <hr>
                 <hr>
-                <form style="display:flex;flex-direction:column;justify-content:center;align-items:center" action="api/admin.api.php" method="POST" enctype="multipart/form-data">
-                    <input required type="text" name="titlu" placeholder="Titlu">
+                <form style="justify-content:center;align-items:center" action="api/admin.api.php" method="POST" enctype="multipart/form-data">
+                    <div class="control-group">
+                        <div class="form-floating controls mb-3">
+                            <input class="border rounded-0 border-1 border-dark form-control" type="text" id="titlu" name="titlu" required placeholder="Titlu">
+                            <label class="form-label" for="titlu" style="margin: 5px;">Titlu</label>
+                            <small class="form-text text-danger help-block"></small>
+                        </div>
+                    </div>
                     <!-- <input required type="text" name="user" placeholder="user"> -->
-                    <textarea required name="subtitluri" placeholder="subtitluri" id="" cols="30" rows="10"></textarea>
-                    <textarea required name="txt" placeholder="descrieri" id="" cols="30" rows="10"></textarea>
 
-                    <select id="an" name="an" required>
-                        <option value=""></option>
-                    </select>
+                    <!-- Start: Subtitluri -->
+                    <div class="control-group">
+                        <div class="form-floating controls mb-3">
+                            <textarea class="border rounded-0 border-1 border-dark form-control" required name="subtitluri" placeholder="subtitluri" id="" cols="30" rows="10" style="height: 150px;"></textarea>
+                            <label class="form-label" style="margin: 4px;">Subtitluri</label>
+                            <small class="form-text text-danger help-block"></small>
+                        </div>
+                    </div><!-- End: Subtitluri -->
+                    <!-- Start: Descrieri -->
+                    <div class="control-group">
+                        <div class="form-floating controls mb-3">
+                            <textarea class="border rounded-0 border-1 border-dark form-control" required name="txt" placeholder="descrieri" id="" cols="30" rows="10" style="height: 150px;"></textarea>
+                            <label class="form-label" style="padding: 20px 0px;margin: 5px;">descrieri</label>
+                            <small class="form-text text-danger help-block"></small>
+                        </div>
+                    </div><!-- End: Descrieri -->
+                    <div class="control-group">
+                        <div class="form-floating controls mb-3">
+                            <select class="form-select" id="an" name="an" required>
+                                <option value=""></option>
+                            </select>
 
-                    <script>
-                        const an_html_element = document.querySelector("#an");
-                        const an = new Date().getFullYear();
 
-                        an_html_element.innerHTML = "<option value=''>Alege un an</option>";
+                            <script>
+                                const an_html_element = document.querySelector("#an");
+                                const an = new Date().getFullYear();
 
-                        for (let i = 2015; i <= an; i++) {
-                            let optionTag = "<option value='" + i + "'>" + i + "</option>";
-                            an_html_element.innerHTML += optionTag;
-                        }
-                    </script>
+                                an_html_element.innerHTML = "<option value=''>Alege un an</option>";
 
+                                for (let i = 2015; i <= an; i++) {
+                                    let optionTag = "<option value='" + i + "'>" + i + "</option>";
+                                    an_html_element.innerHTML += optionTag;
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    <!-- Start: imaginea coperta -->
+                    <div class="control-group">
+                        <div class="form-floating controls mb-3">
+                            <input class="form-control form-control-lg d-inline-flex" required type="file" name="cover" style="padding: 44px 0px 10px;">
+                            <label class="form-label fs-2 fw-normal text-center text-dark">Imaginea de coperta a evenimentului</label>
+                            <small class="form-text text-danger help-block"></small>
+                        </div>
+                    </div><!-- End: imaginea coperta -->
+                    <!-- Start: imaginile evenimentului -->
+                    <div class="control-group">
+                        <div class="form-floating controls mb-3">
+                            <input class="form-control form-control-lg d-inline-flex" required type="file" name="imagini[]" multiple style="padding: 44px 0px 10px;">
+                            <label class="form-label fs-2 fw-normal text-center text-dark">Imagininile evenimentului</label>
+                            <small class="form-text text-danger help-block"></small>
+                        </div>
+                    </div><!-- End: imaginile evenimentului -->
+                    <div class="control-group">
+                        <div class="form-floating controls mb-3">
+                            <input class="form-control" required type="date" name="data">
+                            <label class="form-label fs-2 fw-normal text-center text-dark">Data postării</label>
+                            <small class="form-text text-danger help-block"></small>
+                        </div>
+                    </div><!-- End: Data -->
 
-                    <h1>Imaginea de coperta a eventimentului</h1>
-                    <input required type="file" name="cover">
-                    <h1>Imaginile eventimentului </h1>
-                    <input required type="file" name="imagini[]" multiple>
-                    <input required type="date" name="data">
                     <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
                     <input type="submit" value="adauga" name="ev">
                 </form>
-
+                <p><br><strong>Lista cu evenimentele:</strong></p>
                 <?php
                 foreach ($events as $ev) {
                     echo ' <div class="post-preview">
