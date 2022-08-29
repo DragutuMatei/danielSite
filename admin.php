@@ -162,13 +162,13 @@ $events = $user->getAllEv();
                     </div><!-- End: Descrieri -->
                     <div class="control-group">
                         <div class="form-floating controls mb-3">
-                            <select class="form-select" id="an" name="an" required>
+                            <select class="form-select" id="ann" name="an" required>
                                 <option value="Anii inca nu au fost incarcati"></option>
                             </select>
 
 
                             <script>
-                                const an_html_elementt = document.querySelector("#an");
+                                const an_html_elementt = document.querySelector("#ann");
                                 const an = new Date().getFullYear();
 
                                 an_html_elementt.innerHTML = "<option value=''>Alege un an</option>";
