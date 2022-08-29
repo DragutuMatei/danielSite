@@ -169,25 +169,23 @@ require_once './core/init.php';
         <div class="container">
 
             <div class="section-title">
-                <h2>Evenimente</h2>
+            <h2 style="color: #0085a1;text-align: center;font-family: 'Lora',serif;"><strong>ULTIMELE EVENIMENTE</strong><br></h2>
             </div>
 
             <div class="row" data-aos="fade-up">
-                <div class="col-md-5">
-                    <img src="assets/img/brevete.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="col-md-7 pt-4">
-                    <h3>Aici o sa fie lista cu evenimente</h3>
-                    <p class="fst-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore
-                        magna aliqua.
-                    </p>
-                    <ul>
-                        <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                    </ul>
-                </div>
+                <?php
+                $user = new User();
+                $events = $user->getAllEv();
+                foreach ($events as $ev) {
+                    echo ' <div class="post-preview">
+                <a href="post.php?ev=true&id=' . $ev->id . '">
+                    <h2 class="post-title">' . $ev->titlu . '</h2>
+                    <h3 class="post-subtitle">' . explode(";", $ev->subtitluri)[0] . '&nbsp;</h3>
+                </a>
+            </div>
+            <hr>';
+                }
+                ?>
             </div>
 
             <style>
