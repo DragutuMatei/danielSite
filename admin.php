@@ -211,7 +211,7 @@ $events = $user->getAllEv();
                 <?php
                 foreach ($events as $ev) {
                     echo ' <div class="post-preview">
-                <a href="post.php?ev=true&id=' . $ev->id . '">
+                <a href="event.php?id=' . $ev->id . '">
                     <h2 class="post-title">' . $ev->titlu . '</h2>
                     <h3 class="post-subtitle">' . explode(";", $ev->subtitluri)[0] . '&nbsp;</h3>
                 </a>

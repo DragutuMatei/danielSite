@@ -4,7 +4,7 @@ require_once './core/init.php';
 $id = $_GET['id'];
 $user = new User();
 
-$post = $user->getPost($id);
+$post = $user->getEvent($id);
 
 $subtitle  = explode(";", $post->subtitluri);
 $txt = explode(";", $post->txt);
