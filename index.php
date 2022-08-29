@@ -83,26 +83,31 @@ require_once './core/init.php';
     <br><br>
     <div class="container">
         <div class="row">
-            <div class="col-md-10 col-lg-8">
 
-                <?php
-                $user = new User();
 
-                $posts = $user->getPosts();
-                foreach ($posts as $post) {
-                    echo ' <div class="post-preview">
+            <?php
+            $user = new User();
+
+            $posts = $user->getPosts();
+
+            foreach ($posts as $post) {
+                echo ' 
+                    <div class="col-md-4">
+                    <div class="post-preview">
                                 <a href="post.php?id=' . $post->id . '">
+                                    
                                     <h2 class="post-title">' . $post->titlu . '</h2>
                                     <h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3>
                                 </a>
                                 <p class="post-meta">A fost postat de <a href="https://www.facebook.com/muzeultecucean.antoncincu.1" target="_blank">Daniel Dojan</a></p>
                             </div>
-                            <hr>';
-                }
-                ?>
+                            <hr>
+                            </div>';
+            }
+            ?>
 
 
-                <!-- <div class="post-preview"><a href="#">
+            <!-- <div class="post-preview"><a href="#">
                         <h2 class="post-title">Aici avem urmatoarea postare</h2>
                     </a>
                     <p class="post-meta">Posted by&nbsp;<a href="#">bag pl in el</a></p>
@@ -123,7 +128,7 @@ require_once './core/init.php';
                 </div>
                 <hr>
                 <div class="clearfix"><button class="btn btn-primary float-end" type="button">Ultimele postari</button></div> -->
-            </div>
+
         </div>
     </div>
     <br><br>
@@ -132,7 +137,7 @@ require_once './core/init.php';
         <div class="container">
 
             <div class="section-title">
-            <h2 style="color: #0085a1;text-align: center;font-family: 'Lora',serif;"><strong>Videoclipuri</strong><br></h2>
+                <h2 style="color: #0085a1;text-align: center;font-family: 'Lora',serif;"><strong>Videoclipuri</strong><br><br></h2>
             </div>
 
             <div class="row" data-aos="fade-up">
@@ -140,31 +145,34 @@ require_once './core/init.php';
 
                 $API_Key = 'AIzaSyAvhoUmb4y597K1kJIFoom7BnBV-3yhpp0';
                 $Channel_ID = 'UCdO2EAqfyx5kx9VJfQjyRaA';
-                $Max_Results = 5; 
- 
+                $Max_Results = 6;
+
                 // Get videos from channel by YouTube Data API 
-                $apiData = @file_get_contents('https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId='.$Channel_ID.'&maxResults='.$Max_Results.'&key='.$API_Key.''); 
-                if($apiData){ 
-                    $videoList = json_decode($apiData); 
-                }else{ 
-                    echo 'Invalid API key or channel ID.'; 
+                $apiData = @file_get_contents('https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId=' . $Channel_ID . '&maxResults=' . $Max_Results . '&key=' . $API_Key . '');
+                if ($apiData) {
+                    $videoList = json_decode($apiData);
+                } else {
+                    echo 'Invalid API key or channel ID.';
                 }
-               
-                if(!empty($videoList->items)){ 
-                    foreach($videoList->items as $item){ 
+
+                if (!empty($videoList->items)) {
+                    foreach ($videoList->items as $item) {
                         // Embed video 
-                        if(isset($item->id->videoId)){ 
+                        if (isset($item->id->videoId)) {
                             echo ' 
+                            
+                            <div class="col-md-4">
                             <div class="yvideo-box"> 
-                                <iframe width="280" height="150" src="https://www.youtube.com/embed/'.$item->id->videoId.'" frameborder="0" allowfullscreen></iframe> 
-                                <h4>'. $item->snippet->title .'</h4> 
-                            </div>'; 
-                        } 
-                    } 
-                }else{ 
-                    echo '<p class="error">'.$apiError.'</p>'; 
+                                <iframe width="280" height="150" src="https://www.youtube.com/embed/' . $item->id->videoId . '" frameborder="0" allowfullscreen></iframe> 
+                                <h4 class="post-title">' . $item->snippet->title . '</h4> 
+                            </div>
+                            </div>';
+                        }
+                    }
+                } else {
+                    echo '<p class="error">' . $apiError . '</p>';
                 }
-               ?>
+                ?>
             </div>
 
             <style>
@@ -191,13 +199,16 @@ require_once './core/init.php';
                 $user = new User();
                 $events = $user->getEvents();
                 foreach ($events as $ev) {
-                    echo ' <div class="post-preview">
+                    echo '
+                    <div class="col-md-4"> <div class="post-preview">
                     <a href="event.php?id=' . $ev->id . '">
                     <h2 class="post-title">' . $ev->titlu . '</h2>
                     <h3 class="post-subtitle">' . explode(";", $ev->subtitluri)[0] . '&nbsp;</h3>
+                    <p class="post-meta">Eveniment din anul ' . $ev->an . '</p>
                 </a>
             </div>
-            <hr>';
+            <hr>
+            </div>';
                 }
                 ?>
             </div>
