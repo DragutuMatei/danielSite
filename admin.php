@@ -132,9 +132,7 @@ $events = $user->getAllEv();
                 ?>
 
                 <br><br><br><br><br><br><br>
-                <hr>
-                <hr>
-                <hr>
+                <p><br><strong>De aici poți adăuga evenimente:</strong></p>
                 <hr>
                 <form style="justify-content:center;align-items:center" action="api/admin.api.php" method="POST" enctype="multipart/form-data">
                     <div class="control-group">
