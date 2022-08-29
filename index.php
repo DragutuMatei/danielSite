@@ -169,7 +169,7 @@ require_once './core/init.php';
         <div class="container">
 
             <div class="section-title">
-            <h2 style="color: #0085a1;text-align: center;font-family: 'Lora',serif;"><strong>ULTIMELE EVENIMENTE</strong><br></h2>
+                <h2 style="color: #0085a1;text-align: center;font-family: 'Lora',serif;"><strong>ULTIMELE EVENIMENTE</strong><br></h2>
             </div>
 
             <div class="row" data-aos="fade-up">
@@ -178,7 +178,7 @@ require_once './core/init.php';
                 $events = $user->getAllEv();
                 foreach ($events as $ev) {
                     echo ' <div class="post-preview">
-                <a href="post.php?ev=true&id=' . $ev->id . '">
+                    <a href="event.php?id=' . $ev->id . '">
                     <h2 class="post-title">' . $ev->titlu . '</h2>
                     <h3 class="post-subtitle">' . explode(";", $ev->subtitluri)[0] . '&nbsp;</h3>
                 </a>
