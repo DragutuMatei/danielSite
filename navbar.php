@@ -116,7 +116,7 @@
                     <a aria-expanded="false" data-bs-toggle="dropdown" class="dropdown-toggle text-uppercase" href="#">Evenimente
                     </a>
                     <div id="an" class="dropdown-menu">
-                        <a class="dropdown-item" href="#">nu s-a putut incarca lista de ani</a>
+                        <!-- <a class="dropdown-item" href="#">nu s-a putut incarca lista de ani</a> -->
                     </div>
 
                     <script>

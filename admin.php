@@ -178,11 +178,11 @@ $events = $user->getAllEv();
                                 const an = new Date().getFullYear();
                                 console.log(an_html_element)
 
-                                an_html_elementt.innerHTML = "<option value=''>Alege un an</option>";
+                                an_html_element.innerHTML = "<option value=''>Alege un an</option>";
 
                                 for (let i = 2015; i <= an; i++) {
                                     let optionTag = "<option value='" + i + "'>" + i + "</option>";
-                                    an_html_elementt.innerHTML += optionTag;
+                                    an_html_element.innerHTML += optionTag;
                                 }
                             </script>
                         </div>
