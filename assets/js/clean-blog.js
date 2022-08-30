@@ -34,6 +34,9 @@
 //   }
 
 // })(); // End of use strict
+
+
+
 window.addEventListener('DOMContentLoaded', () => {
   let scrollPos = 50;
   const mainNav = document.getElementById('mainNav');

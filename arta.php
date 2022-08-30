@@ -18,6 +18,7 @@ require_once './core/init.php';
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-utilities.compiled.css">
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.compiled.css">
     <link rel="stylesheet" href="assets/scss/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
 </head>
 
 <body>
@@ -73,12 +74,26 @@ require_once './core/init.php';
                 </div>
             </div>
         </div>
+
+        <!-- Start: Photos -->
+        <div class="row gx-2 gy-2 row-cols-1 row-cols-md-2 row-cols-xl-3 photos" data-bss-baguettebox="">
+            <div class="col item"><a href="assets/img/arta6.jpg"><img class="img-fluid" src="assets/img/arta6.jpg"></a></div>
+            <div class="col item"><a href="assets/img/arta2.png"><img class="img-fluid" src="assets/img/arta2.png"></a></div>
+            <div class="col item"><a href="assets/img/arta3.jpg"><img class="img-fluid" src="assets/img/arta3.jpg"></a></div>
+            <div class="col item"><a href="assets/img/arta5.jpg"><img class="img-fluid" src="assets/img/arta5.jpg"></a></div>
+            <div class="col item"><a href="assets/img/arta.jpg"><img class="img-fluid" src="assets/img/arta.jpg"></a></div>
+
+        </div><!-- End: Photos -->
+
     </div>
     <hr>
 
     <?php require_once './footer.php';  ?>
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
     <script src="assets/js/clean-blog.js"></script>
+    <script src="assets/js/gallery.js"></script>
 </body>
 
 </html>

@@ -18,6 +18,7 @@ require_once './core/init.php';
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-utilities.compiled.css">
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.compiled.css">
     <link rel="stylesheet" href="assets/scss/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
 </head>
 
 <body>
@@ -72,12 +73,29 @@ require_once './core/init.php';
                 </div>
             </div>
         </div>
+
+        <!-- Start: Photos -->
+        <div class="row gx-2 gy-2 row-cols-1 row-cols-md-2 row-cols-xl-3 photos" data-bss-baguettebox="">
+            <div class="col item"><a href="assets/img/situri.png"><img class="img-fluid" src="assets/img/situri.png"></a></div>
+            <div class="col item"><a href="assets/img/situri2.png"><img class="img-fluid" src="assets/img/situri2.png"></a></div>
+            <div class="col item"><a href="assets/img/situri3.png"><img class="img-fluid" src="assets/img/situri3.png"></a></div>
+            <div class="col item"><a href="assets/img/situri4.png"><img class="img-fluid" src="assets/img/situri4.png"></a></div>
+            <div class="col item"><a href="assets/img/situri5.png"><img class="img-fluid" src="assets/img/situri5.png"></a></div>
+            <div class="col item"><a href="assets/img/situri6.png"><img class="img-fluid" src="assets/img/situri6.png"></a></div>
+            <div class="col item"><a href="assets/img/situri7.png"><img class="img-fluid" src="assets/img/situri7.png"></a></div>
+            <div class="col item"><a href="assets/img/situri8.png"><img class="img-fluid" src="assets/img/situri8.png"></a></div>
+            <div class="col item"><a href="assets/img/situri9.png"><img class="img-fluid" src="assets/img/situri9.png"></a></div>
+        </div><!-- End: Photos -->
+
     </div>
     <hr>
 
     <?php require_once './footer.php';  ?>
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
     <script src="assets/js/clean-blog.js"></script>
+    <script src="assets/js/gallery.js"></script>
 </body>
 
 </html>

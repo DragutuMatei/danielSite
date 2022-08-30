@@ -18,6 +18,7 @@ require_once './core/init.php';
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-utilities.compiled.css">
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.compiled.css">
     <link rel="stylesheet" href="assets/scss/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
 </head>
 
 <body>
@@ -76,12 +77,22 @@ require_once './core/init.php';
                 </div>
             </div>
         </div>
+
+        <!-- Start: Photos -->
+        <div class="row gx-2 gy-2 row-cols-1 row-cols-md-2 row-cols-xl-3 photos" data-bss-baguettebox="">
+            <div class="col item"><a href="assets/img/eneolitic.jpg"><img class="img-fluid" src="assets/img/eneolitic.jpg"></a></div>
+            <div class="col item"><a href="assets/img/vas_eneolitic.jpg"><img class="img-fluid" src="assets/img/vas_eneolitic.jpg" alt="vas cu capac tip urna cultura Cucuteni asezarea de la Toflea Galati"></a></div>
+        </div><!-- End: Photos -->
+
     </div>
     <hr>
 
     <?php require_once './footer.php';  ?>
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
     <script src="assets/js/clean-blog.js"></script>
+    <script src="assets/js/gallery.js"></script>
 </body>
 
 </html>
