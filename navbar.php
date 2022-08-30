@@ -3,45 +3,39 @@
         text-transform: uppercase;
     }
 
-    /* ============ desktop view ============ */
-    @media all and (min-width: 992px) {
-        .dropdown-menu li {
-            position: relative;
-        }
 
-        .nav-item .submenu {
-            display: none;
-            position: absolute;
-            left: 100%;
-            top: -7px;
-        }
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
 
-        .nav-item .submenu-left {
-            right: 100%;
-            left: auto;
-        }
+.dropdown-menu li{
+    position: relative;
+}
+.dropdown-menu .submenu{ 
+    display: none;
+    position: absolute;
+    left:100%; top:-7px;
+}
+.dropdown-menu .submenu-left{ 
+    right:100%; left:auto;
+}
 
-        .dropdown-menu>li:hover {
-            background-color: #f1f1f1
-        }
+.dropdown-menu > li:hover{ background-color: #f1f1f1 }
+.dropdown-menu > li:hover > .submenu{
+    display: block;
+}
+}	
+/* ============ desktop view .end// ============ */
 
-        .dropdown-menu>li:hover>.submenu {
-            display: block;
-        }
-    }
+/* ============ small devices ============ */
+@media (max-width: 991px) {
 
-    /* ============ desktop view .end// ============ */
+.dropdown-menu .dropdown-menu{
+    margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
+}
 
-    /* ============ small devices ============ */
-    @media (max-width: 991px) {
-        .dropdown-menu .dropdown-menu {
-            margin-left: 0.7rem;
-            margin-right: 0.7rem;
-            margin-bottom: .5rem;
-        }
-    }
+}	
+/* ============ small devices .end// ============ */
 
-    /* ============ small devices .end// ============ */
 </style>
 
 <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
@@ -81,7 +75,7 @@
                     <ul class="dropdown-menu">
                         <!-- <li><a class="dropdown-item" href="colectie.php?sect=paleontologie">Paleontologie</a></li> -->
                         <li><a class="dropdown-item" href="paleontologie.php">Paleontologie</a></li>
-                        <li><a class="dropdown-item" href="colectie.php?sect=arheologie">Arheologie &raquo;</a>
+                        <li><a class="dropdown-item" href="arheologie.php">Arheologie &raquo;</a>
                             <ul class="submenu dropdown-menu">
                                 <!-- <li><a class="dropdown-item" href="colectie.php?sect=eneolitic">Eneolitic cucuteni</a></li> -->
                                 <li><a class="dropdown-item" href="eneolitic.php">Eneolitic cucuteni</a></li>
