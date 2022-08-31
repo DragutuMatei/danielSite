@@ -54,7 +54,7 @@ require_once './core/init.php';
         <div class="row">
             <div class="col-md-6"><img style="width: 100%;" src="assets/img/muzeucincu-inainte-02.jpg"></div>
             <div class="col-md-6">
-                <h3 style="color: #0085a1;text-align: center;font-family: 'Lora',serif;">SCURT ISTORIC</h3>
+                <h3 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;">SCURT ISTORIC</h3>
                 <h2 style="text-align: center;font-family: 'Poppins',sans-serif;"><br><strong>MUZEUL DE ISTORIE „TEODOR CINCU” TECUCI</strong><br><br></h2>
                 <div class="muzeu_text_column muzeu_content_element muzeu_animate_when_almost_visible muzeu_slideInRight slideInRight vc_custom_1508447400818 muzeu_start_animation animated">
                     <div class="muzeu_wrapper">
@@ -68,7 +68,7 @@ require_once './core/init.php';
                     <div class="widget widget_text">
                         <div class="textwidget">
                             <p></p>
-                            <p style="text-align: center;"><a href="istoric.php" rel="noopener"><span style="color: #0085a1;">&nbsp;Citeste mai multe&nbsp;→</span></a></p>
+                            <p style="text-align: center;"><a href="istoric.php" rel="noopener"><span style="color: #17AA4B;">&nbsp;Citeste mai multe&nbsp;→</span></a></p>
                             <p></p>
                         </div>
                     </div>
@@ -79,7 +79,7 @@ require_once './core/init.php';
     </div><!-- End: 1 Row 2 Columns -->
     <br><br>
     <br><br>
-    <h2 style="color: #0085a1;text-align: center;font-family: 'Lora',serif;"><strong>CELE MAI NOI ARTICOLE</strong><br></h2>
+    <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong>CELE MAI NOI ARTICOLE</strong><br></h2>
     <br><br>
     <div class="container">
         <div class="row">
@@ -137,7 +137,7 @@ require_once './core/init.php';
         <div class="container">
 
             <div class="section-title">
-                <h2 style="color: #0085a1;text-align: center;font-family: 'Lora',serif;"><strong>Videoclipuri</strong><br><br></h2>
+                <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong>Videoclipuri</strong><br><br></h2>
             </div>
 
             <div class="row" data-aos="fade-up">
@@ -191,7 +191,7 @@ require_once './core/init.php';
         <div class="container">
 
             <div class="section-title">
-                <h2 style="color: #0085a1;text-align: center;font-family: 'Lora',serif;"><strong>ULTIMELE EVENIMENTE</strong><br></h2>
+                <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong>ULTIMELE EVENIMENTE</strong><br></h2>
             </div>
 
             <div class="row" data-aos="fade-up">

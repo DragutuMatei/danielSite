@@ -59,6 +59,7 @@ h1 {
 
 h2 {
   font-size: calc(1.325rem + 0.9vw);
+  
 }
 @media (min-width: 1200px) {
   h2 {
@@ -145,6 +146,7 @@ blockquote {
 b,
 strong {
   font-weight: bolder;
+  color: #2F2F2F!important;
 }
 
 small {

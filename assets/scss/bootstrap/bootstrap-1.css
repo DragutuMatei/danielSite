@@ -177,6 +177,7 @@ blockquote {
 b,
 strong {
   font-weight: bolder;
+  color: #2F2F2F !important;
 }
 
 small, .small {

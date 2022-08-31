@@ -1,41 +1,55 @@
 <style>
+    h2 {
+        color: #2F2F2F;
+    }
+
     *::first-letter {
         text-transform: uppercase;
     }
 
 
-/* ============ desktop view ============ */
-@media all and (min-width: 992px) {
+    /* ============ desktop view ============ */
+    @media all and (min-width: 992px) {
 
-.dropdown-menu li{
-    position: relative;
-}
-.dropdown-menu .submenu{ 
-    display: none;
-    position: absolute;
-    left:100%; top:-7px;
-}
-.dropdown-menu .submenu-left{ 
-    right:100%; left:auto;
-}
+        .dropdown-menu li {
+            position: relative;
+        }
 
-.dropdown-menu > li:hover{ background-color: #f1f1f1 }
-.dropdown-menu > li:hover > .submenu{
-    display: block;
-}
-}	
-/* ============ desktop view .end// ============ */
+        .dropdown-menu .submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: -7px;
+        }
 
-/* ============ small devices ============ */
-@media (max-width: 991px) {
+        .dropdown-menu .submenu-left {
+            right: 100%;
+            left: auto;
+        }
 
-.dropdown-menu .dropdown-menu{
-    margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
-}
+        .dropdown-menu>li:hover {
+            background-color: #f1f1f1
+        }
 
-}	
-/* ============ small devices .end// ============ */
+        .dropdown-menu>li:hover>.submenu {
+            display: block;
+        }
+    }
 
+    /* ============ desktop view .end// ============ */
+
+    /* ============ small devices ============ */
+    @media (max-width: 991px) {
+
+        .dropdown-menu .dropdown-menu {
+            margin-left: 0.7rem;
+            margin-right: 0.7rem;
+            margin-bottom: .5rem;
+        }
+
+    }
+
+    /* ============ small devices .end// ============ */
 </style>
 
 <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>

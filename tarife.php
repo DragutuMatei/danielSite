@@ -46,7 +46,7 @@ tr:nth-child(even) {
         <div class="overlay"></div>
 
     </header>
-    <h3 style="color: #0085a1;text-align: center;font-family: 'Lora',serif;">Taxe si tarife 2022</h3>
+    <h3 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;">Taxe si tarife 2022</h3>
     <h2 style="text-align: center;font-family: 'Poppins',sans-serif;"><br><strong>MUZEUL DE ISTORIE „TEODOR CINCU” TECUCI</strong><br><br></h2>
     <div class="container" style="text-align: center;">
         <div class="text_istoric">
