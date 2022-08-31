@@ -79,7 +79,7 @@ require_once './core/init.php';
     </div><!-- End: 1 Row 2 Columns -->
     <br><br>
     <br><br>
-    <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong>CELE MAI NOI ARTICOLE</strong><br></h2>
+    <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong style="color: #17AA4B!important">CELE MAI NOI ARTICOLE</strong><br></h2>
     <br><br>
     <div class="container">
         <div class="row">
@@ -137,7 +137,7 @@ require_once './core/init.php';
         <div class="container">
 
             <div class="section-title">
-                <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong>Videoclipuri</strong><br><br></h2>
+                <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong style="color: #17AA4B!important">Videoclipuri</strong><br><br></h2>
             </div>
 
             <div class="row" data-aos="fade-up">
@@ -191,7 +191,7 @@ require_once './core/init.php';
         <div class="container">
 
             <div class="section-title">
-                <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong>ULTIMELE EVENIMENTE</strong><br></h2>
+                <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong style="color: #17AA4B!important">ULTIMELE EVENIMENTE</strong><br></h2>
             </div>
 
             <div class="row" data-aos="fade-up">

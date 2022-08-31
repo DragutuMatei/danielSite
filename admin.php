@@ -47,7 +47,7 @@ $events = $user->getAllEv();
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="site-heading">
-                        <h1><br><strong>Administrarea site-ului muzeului</strong><br></h1>
+                        <h1><br><strong class="aici-alb">Administrarea site-ului muzeului</strong><br></h1>
                     </div>
                 </div>
             </div>

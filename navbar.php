@@ -2,6 +2,12 @@
     h2 {
         color: #2F2F2F;
     }
+    .site-heading{
+        color: white!important;
+    }
+    .aici-alb{
+        color: white!important;
+    }
 
     *::first-letter {
         text-transform: uppercase;

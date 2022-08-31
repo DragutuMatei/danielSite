@@ -251,7 +251,7 @@ $posts = $user->getBlogPosts($offset, $rowsperpage);
 
     <br><br>
     <br><br>
-    <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong>Toate articolele (<?php echo $numar ?>)</strong><br></h2>
+    <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong style="color: #17AA4B!important">Toate articolele (<?php echo $numar ?>)</strong><br></h2>
     <br><br>
     <div class="container">
         <div class="row">

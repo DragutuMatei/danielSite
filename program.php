@@ -30,7 +30,7 @@ require_once './core/init.php';
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="site-heading">
-                        <h1><br><strong></strong><br></h1>
+                        <h1><br><strong class="aici-alb"></strong><br></h1>
                     </div>
                 </div>
             </div>

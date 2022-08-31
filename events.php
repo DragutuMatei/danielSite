@@ -254,7 +254,7 @@ $posts = $user->getBlogEvents($anul_evenimentului, $offset, $rowsperpage);
 
     <br><br>
     <br><br>
-    <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong>Toate evenimentele din anul <?php echo $anul_evenimentului ?> (<?php echo $numar ?>)</strong><br></h2>
+    <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong style="color: #17AA4B!important">Toate evenimentele din anul <?php echo $anul_evenimentului ?> (<?php echo $numar ?>)</strong><br></h2>
     <br><br>
     <div class="container">
         <div class="row">
