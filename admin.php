@@ -232,6 +232,8 @@ $events = $user->getAllEv();
                 ?>
                 <?php
                 require_once './footer.php';  ?>
+                <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+                <script src="assets/js/clean-blog.js"></script>
 </body>
 
 </html>

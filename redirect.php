@@ -77,6 +77,8 @@ if (isset($_SESSION["admin"])) {
     </form> -->
     <?php
     require_once './footer.php';  ?>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/clean-blog.js"></script>
 
 </body>
 
