@@ -61,6 +61,171 @@ $posts = $user->getBlogPosts($offset, $rowsperpage);
 
 
 
+    <style>
+        .pagination,
+        .pagination li a {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pagination li {
+            background-color: lightseagreen;
+        }
+
+        .pagination a {
+            font-weight: 300;
+            padding-top: 1px;
+            text-decoration: none;
+            border: 1px solid rgba(0, 0, 0, .25);
+            border-left-width: 0;
+            min-width: 44px;
+            min-height: 44px;
+            color: rgba(255, 255, 255, .85);
+            box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, .35);
+        }
+
+        .pagination li:not([class*="current"]) a:hover {
+            background-color: rgba(255, 255, 255, .2);
+            border-top-color: rgba(0, 0, 0, .35);
+            border-bottom-color: rgba(0, 0, 0, .5);
+        }
+
+        .pagination li:not([class*="current"]) a:focus,
+        .pagination li:not([class*="current"]) a:active {
+            box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .25);
+            border-left-width: 1px;
+        }
+
+        .pagination li:first-of-type a {
+            border-left-width: 1px;
+        }
+
+        .pagination li:first-of-type span,
+        .pagination li:last-of-type span,
+        .pagination li:nth-of-type(2) span,
+        .pagination li:nth-last-of-type(2) span {
+            /* screen readers only */
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        .pagination li:first-child a::before,
+        .pagination li:last-child a::after,
+        .pagination li:nth-of-type(2) a::before,
+        .pagination li:nth-last-of-type(2) a::after {
+            display: inline-block;
+            font-family: Fontawesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transform: translate(0, 0);
+        }
+
+        .pagination li:first-child a::before,
+        .pagination li:last-child a::after {
+            content: "\f100";
+        }
+
+        .pagination li:nth-of-type(2) a::before,
+        .pagination li:nth-last-of-type(2) a::after {
+            content: "\f104";
+        }
+
+        .pagination li:last-child a::after,
+        .pagination li:nth-last-of-type(2) a::after {
+            transform: rotate(180deg);
+        }
+
+        .pagination li.current a {
+            padding-top: .25em;
+            color: rgba(255, 255, 255, 1);
+            background-color: rgba(255, 255, 255, .15);
+            box-shadow: inset 0px 2px 1px 0px rgba(0, 0, 0, .25);
+            cursor: default;
+            pointer-events: none;
+        }
+
+        @media only screen and (max-width: 64.063em) {
+
+            .pagination li:first-child,
+            .pagination li:last-child {
+                /* screen readers only */
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            .pagination li:nth-of-type(2) a {
+                border-left-width: 1px;
+            }
+
+        }
+
+        @media only screen and (max-width: 40.063em) {
+            .pagination li {
+                /* screen readers only */
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            .pagination li.current,
+            .pagination li:first-of-type,
+            .pagination li:last-of-type,
+            .pagination li:nth-of-type(2),
+            .pagination li:nth-last-of-type(2) {
+                position: initial;
+                top: initial;
+                left: initial;
+            }
+
+            .pagination li:nth-of-type(2) a {
+                border-left-width: 0;
+            }
+
+        }
+
+        @media only screen and (max-width: 30.063em) {
+
+            h1 {
+                font-size: 1.35em !important;
+            }
+
+            .pagination li:first-child,
+            .pagination li:last-child {
+                /* screen readers only */
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            .pagination li:nth-of-type(2) a {
+                border-left-width: 1px;
+            }
+
+        }
+
+        @media only screen and (max-width: 15.063em) {
+            /* For watches? */
+
+            .pagination li {
+                width: 50%;
+            }
+
+            .pagination li.current {
+                order: 2;
+                width: 100%;
+                border-left-width: 1px;
+
+            }
+
+        }
+    </style>
+
 
 
 </head>
@@ -106,50 +271,7 @@ $posts = $user->getBlogPosts($offset, $rowsperpage);
                 }
                 ?>
 
-                <?php
 
-                /******  build the pagination links ******/
-                // range of num links to show
-                $range = 3;
-
-                // if not on page 1, don't show back links
-                if ($currentpage > 1) {
-                    // show << link to go back to page 1
-                    echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=1'><<</a> ";
-                    // get previous page num
-                    $prevpage = $currentpage - 1;
-                    // show < link to go back to 1 page
-                    echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=$prevpage'><</a> ";
-                } // end if 
-
-                // loop to show links to range of pages around current page
-                for ($x = ($currentpage - $range); $x < (($currentpage + $range) + 1); $x++) {
-                    // if it's a valid page number...
-                    if (($x > 0) && ($x <= $totalpages)) {
-                        // if we're on current page...
-                        if ($x == $currentpage) {
-                            // 'highlight' it but don't make a link
-                            echo " [<b>$x</b>] ";
-                            // if not current page...
-                        } else {
-                            // make it a link
-                            echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=$x'>$x</a> ";
-                        } // end else
-                    } // end if 
-                } // end for
-
-                // if not on last page, show forward and last page links        
-                if ($currentpage != $totalpages) {
-                    // get next page
-                    $nextpage = $currentpage + 1;
-                    // echo forward link for next page 
-                    echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=$nextpage'>></a> ";
-                    // echo forward link for lastpage
-                    echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=$totalpages'>>></a> ";
-                } // end if
-                /****** end build pagination links ******/
-
-                ?>
                 <!-- <div class="post-preview"><a href="#">
                         <h2 class="post-title">Aici avem urmatoarea postare</h2>
                     </a>
@@ -172,6 +294,61 @@ $posts = $user->getBlogPosts($offset, $rowsperpage);
                 <hr>
                 <div class="clearfix"><button class="btn btn-primary float-end" type="button">Ultimele postari</button></div> -->
             </div>
+            <ul class="pagination" role="menubar" aria-label="Pagination">
+
+                <?php
+
+                /******  build the pagination links ******/
+                // range of num links to show
+                $range = 3;
+
+                // if not on page 1, don't show back links
+                // if ($currentpage > 1) {
+                // show << link to go back to page 1
+                echo " <li><a href='{$_SERVER['PHP_SELF']}?currentpage=1'><span>First</span></a></li>";
+                // get previous page num
+                $prevpage = $currentpage - 1;
+                if ($currentpage == 1) {
+                    $prevpage = $currentpage;
+                }
+                // show < link to go back to 1 page
+                echo " <li><a href='{$_SERVER['PHP_SELF']}?currentpage=$prevpage'><span>Previous</span></a></li>";
+                // } // end if 
+
+                // loop to show links to range of pages around current page
+                for ($x = ($currentpage - $range); $x < (($currentpage + $range) + 1); $x++) {
+                    // if it's a valid page number...
+                    if (($x > 0) && ($x <= $totalpages)) {
+                        // if we're on current page...
+                        if ($x == $currentpage) {
+                            // 'highlight' it but don't make a link
+                            echo "<li class='current'><a href='#'> $x</a></li> ";
+                            // if not current page...
+                        } else {
+                            // make it a link
+                            echo "<li> <a href='{$_SERVER['PHP_SELF']}?currentpage=$x'>$x</a></li> ";
+                        } // end else
+                    } // end if 
+                } // end for
+
+                // if not on last page, show forward and last page links        
+                // if ($currentpage != $totalpages) {
+                // get next page
+
+                $nextpage = $currentpage + 1;
+                if ($currentpage == $totalpages) {
+                    $nextpage = $currentpage;
+                }
+                // echo forward link for next page 
+                echo " <li><a href='{$_SERVER['PHP_SELF']}?currentpage=$nextpage'><span>Next</span></a></li> ";
+                // echo forward link for lastpage
+                echo " <li><a href='{$_SERVER['PHP_SELF']}?currentpage=$totalpages'><span>Last</span></a></li>";
+                // } // end if
+                /****** end build pagination links ******/
+
+                ?>
+
+            </ul>
         </div>
     </div>
 
