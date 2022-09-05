@@ -145,7 +145,7 @@ require_once './core/init.php';
 
                 $API_Key = 'AIzaSyAvhoUmb4y597K1kJIFoom7BnBV-3yhpp0';
                 $Channel_ID = 'UCdO2EAqfyx5kx9VJfQjyRaA';
-                $Max_Results = 6;
+                $Max_Results = 2;
 
                 // Get videos from channel by YouTube Data API 
                 $apiData = @file_get_contents('https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId=' . $Channel_ID . '&maxResults=' . $Max_Results . '&key=' . $API_Key . '');
@@ -161,10 +161,10 @@ require_once './core/init.php';
                         if (isset($item->id->videoId)) {
                             echo ' 
                             
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                             <div class="yvideo-box"> 
-                                <iframe width="280" height="150" src="https://www.youtube.com/embed/' . $item->id->videoId . '" frameborder="0" allowfullscreen></iframe> 
-                                <h4 class="post-title">' . $item->snippet->title . '</h4> 
+                                <iframe loading="lazy" title="' . $item->snippet->title . '" width="560" height="315" src="https://www.youtube.com/embed/' . $item->id->videoId . '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+ 
                             </div>
                             </div>';
                         }
