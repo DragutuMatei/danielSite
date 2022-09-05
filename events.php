@@ -50,7 +50,7 @@ $posts = $user->getBlogEvents($anul_evenimentului, $offset, $rowsperpage);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Blog - Muzeul Tecuci</title>
+    <title>Events - Muzeul Tecuci</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
@@ -256,33 +256,35 @@ $posts = $user->getBlogEvents($anul_evenimentului, $offset, $rowsperpage);
     <br><br>
     <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong style="color: #17AA4B!important">Toate evenimentele din anul <?php echo $anul_evenimentului ?> (<?php echo $numar ?>)</strong><br></h2>
     <br><br>
-    <div class="container">
-        <div class="row">
+    <div class="container d-xl-flex justify-content-xl-center">
+        <div class="row d-xl-flex justify-content-xl-center">
             <div class="col-md-10 col-lg-8">
 
                 <?php
 
                 foreach ($posts as $post) {
                     echo ' <div class="post-preview">
-                        <a href="event.php?id=' . $post->id . '">
-                            <h2 class="post-title">' . $post->titlu . '</h2>
-                            <h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3>
-                        </a>
-                        </div>
+                                <a href="event.php?id=' . $post->id . '">
+                                    <img src="' . $post->cover . '" style="width: 447px;" />
+                                    <h2 class="post-title">' . $post->titlu . '</h2>
+                                    <h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3>
+                                </a>
+                            </div>
                         <hr>';
                 }
-
-                // foreach ($posts as $post) {
-                //     echo ' <div class="post-preview">
-                //                 <a href="post.php?id=' . $post->id . '">
-                //                     <h2 class="post-title">' . $post->titlu . '</h2>
-                //                     <h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3>
-                //                 </a>
-                //                 <p class="post-meta">A fost postat de <a href="https://www.facebook.com/muzeultecucean.antoncincu.1" target="_blank">Daniel Dojan</a></p>
-                //             </div>
-                //             <hr>';
-                // }
                 ?>
+                <!-- // foreach ($posts as $post) {
+                // echo ' <div class="post-preview">
+                    // <a href="post.php?id=' . $post->id . '">
+                        // <h2 class="post-title">' . $post->titlu . '</h2>
+                        // <h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3>
+                        // </a>
+                    // <p class="post-meta">A fost postat de <a href="https://www.facebook.com/muzeultecucean.antoncincu.1" target="_blank">Daniel Dojan</a></p>
+                    // </div>
+                //
+                <hr>';
+                // } -->
+
 
                 <!-- <div class="post-preview"><a href="#">
                         <h2 class="post-title">Aici avem urmatoarea postare</h2>
@@ -306,64 +308,63 @@ $posts = $user->getBlogEvents($anul_evenimentului, $offset, $rowsperpage);
                 <hr>
                 <div class="clearfix"><button class="btn btn-primary float-end" type="button">Ultimele postari</button></div> -->
             </div>
+
+            <ul class="pagination" role="menubar" aria-label="Pagination">
+
+                <?php
+
+                /******  build the pagination links ******/
+                // range of num links to show
+                $range = 3;
+
+                // if not on page 1, don't show back links
+                // if ($currentpage > 1) {
+                // show << link to go back to page 1
+                echo " <li><a href='{$_SERVER['PHP_SELF']}?currentpage=1&an=$anul_evenimentului'><span>First</span></a></li>";
+                // get previous page num
+                $prevpage = $currentpage - 1;
+                if ($currentpage == 1) {
+                    $prevpage = $currentpage;
+                }
+                // show < link to go back to 1 page
+                echo " <li><a href='{$_SERVER['PHP_SELF']}?currentpage=$prevpage&an=$anul_evenimentului'><span>Previous</span></a></li>";
+                // } // end if 
+
+                // loop to show links to range of pages around current page
+                for ($x = ($currentpage - $range); $x < (($currentpage + $range) + 1); $x++) {
+                    // if it's a valid page number...
+                    if (($x > 0) && ($x <= $totalpages)) {
+                        // if we're on current page...
+                        if ($x == $currentpage) {
+                            // 'highlight' it but don't make a link
+                            echo "<li class='current'><a href='#'> $x</a></li> ";
+                            // if not current page...
+                        } else {
+                            // make it a link
+                            echo "<li> <a href='{$_SERVER['PHP_SELF']}?currentpage=$x&an=$anul_evenimentului'>$x</a></li> ";
+                        } // end else
+                    } // end if 
+                } // end for
+
+                // if not on last page, show forward and last page links        
+                // if ($currentpage != $totalpages) {
+                // get next page
+
+                $nextpage = $currentpage + 1;
+                if ($currentpage == $totalpages) {
+                    $nextpage = $currentpage;
+                }
+                // echo forward link for next page 
+                echo " <li><a href='{$_SERVER['PHP_SELF']}?currentpage=$nextpage&an=$anul_evenimentului'><span>Next</span></a></li> ";
+                // echo forward link for lastpage
+                echo " <li><a href='{$_SERVER['PHP_SELF']}?currentpage=$totalpages&an=$anul_evenimentului'><span>Last</span></a></li>";
+                // } // end if
+                /****** end build pagination links ******/
+
+                ?>
+
+            </ul>
         </div>
-
-        <ul class="pagination" role="menubar" aria-label="Pagination">
-
-            <?php
-
-            /******  build the pagination links ******/
-            // range of num links to show
-            $range = 3;
-
-            // if not on page 1, don't show back links
-            // if ($currentpage > 1) {
-            // show << link to go back to page 1
-            echo " <li><a href='{$_SERVER['PHP_SELF']}?currentpage=1&an=$anul_evenimentului'><span>First</span></a></li>";
-            // get previous page num
-            $prevpage = $currentpage - 1;
-            if ($currentpage == 1) {
-                $prevpage = $currentpage;
-            }
-            // show < link to go back to 1 page
-            echo " <li><a href='{$_SERVER['PHP_SELF']}?currentpage=$prevpage&an=$anul_evenimentului'><span>Previous</span></a></li>";
-            // } // end if 
-
-            // loop to show links to range of pages around current page
-            for ($x = ($currentpage - $range); $x < (($currentpage + $range) + 1); $x++) {
-                // if it's a valid page number...
-                if (($x > 0) && ($x <= $totalpages)) {
-                    // if we're on current page...
-                    if ($x == $currentpage) {
-                        // 'highlight' it but don't make a link
-                        echo "<li class='current'><a href='#'> $x</a></li> ";
-                        // if not current page...
-                    } else {
-                        // make it a link
-                        echo "<li> <a href='{$_SERVER['PHP_SELF']}?currentpage=$x&an=$anul_evenimentului'>$x</a></li> ";
-                    } // end else
-                } // end if 
-            } // end for
-
-            // if not on last page, show forward and last page links        
-            // if ($currentpage != $totalpages) {
-            // get next page
-
-            $nextpage = $currentpage + 1;
-            if ($currentpage == $totalpages) {
-                $nextpage = $currentpage;
-            }
-            // echo forward link for next page 
-            echo " <li><a href='{$_SERVER['PHP_SELF']}?currentpage=$nextpage&an=$anul_evenimentului'><span>Next</span></a></li> ";
-            // echo forward link for lastpage
-            echo " <li><a href='{$_SERVER['PHP_SELF']}?currentpage=$totalpages&an=$anul_evenimentului'><span>Last</span></a></li>";
-            // } // end if
-            /****** end build pagination links ******/
-
-            ?>
-
-        </ul>
-
     </div>
 
     <?php require_once './footer.php';  ?>

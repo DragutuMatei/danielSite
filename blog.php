@@ -253,8 +253,8 @@ $posts = $user->getBlogPosts($offset, $rowsperpage);
     <br><br>
     <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong style="color: #17AA4B!important">Toate articolele (<?php echo $numar ?>)</strong><br></h2>
     <br><br>
-    <div class="container">
-        <div class="row">
+    <div class="container d-xl-flex justify-content-xl-center">
+        <div class="row d-xl-flex justify-content-xl-center">
             <div class="col-md-10 col-lg-8">
 
                 <?php
@@ -262,6 +262,7 @@ $posts = $user->getBlogPosts($offset, $rowsperpage);
                 foreach ($posts as $post) {
                     echo ' <div class="post-preview">
                                 <a href="post.php?id=' . $post->id . '">
+                                <img src="'. $post->cover . '" style="width: 447px;" />
                                     <h2 class="post-title">' . $post->titlu . '</h2>
                                     <h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3>
                                 </a>
