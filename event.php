@@ -56,7 +56,7 @@ $inceput = 0;
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="post-heading">
                         <h1><?php echo $post->titlu ?></h1>
-                        <h2 class="subheading"> <?php echo $subtitle[0] ?></h2>
+                        <h2 class="subheading aici-alb"> <?php echo $subtitle[0] ?></h2>
                         <span class="meta">Event din anul <?php echo $post->an ?></span>
                         <span class="meta">Posted on <?php echo $post->data ?></span>
                     </div>
