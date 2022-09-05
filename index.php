@@ -95,9 +95,9 @@ require_once './core/init.php';
                     <div class="col-md-4">
                     <div class="post-preview">
                                 <a href="post.php?id=' . $post->id . '">
-                                    
+                                <img class="d-xl-flex justify-content-xl-center align-items-xl-center" style="text-align: center;height: 254px;" src="' . $post->cover . '" />
                                     <h2 class="post-title">' . $post->titlu . '</h2>
-                                    <h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3>
+                                    <!--<h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3> -->
                                 </a>
                                 <p class="post-meta">A fost postat de <a href="https://www.facebook.com/muzeultecucean.antoncincu.1" target="_blank">Daniel Dojan</a></p>
                             </div>
@@ -202,8 +202,9 @@ require_once './core/init.php';
                     echo '
                     <div class="col-md-4"> <div class="post-preview">
                     <a href="event.php?id=' . $ev->id . '">
+                    <img class="d-xl-flex justify-content-xl-center align-items-xl-center" style="text-align: center;height: 254px;" src="' . $ev->cover . '" />
                     <h2 class="post-title">' . $ev->titlu . '</h2>
-                    <h3 class="post-subtitle">' . explode(";", $ev->subtitluri)[0] . '&nbsp;</h3>
+                    <!-- <h3 class="post-subtitle">' . explode(";", $ev->subtitluri)[0] . '&nbsp;</h3>-->
                     <p class="post-meta">Eveniment din anul ' . $ev->an . '</p>
                 </a>
             </div>
