@@ -24,7 +24,8 @@ require_once './core/init.php';
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.compiled.css">
     <link rel="stylesheet" href="assets/scss/styles.css">
 
-
+    <link rel="stylesheet" href="assets/css/Swiper-Slider-Card-For-Blog-Or-Product-swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/Swiper-Slider-Card-For-Blog-Or-Product-untitled.css" />
 
 
 
@@ -106,6 +107,67 @@ require_once './core/init.php';
             }
             ?>
 
+
+            <!-- <div class="post-preview"><a href="#">
+                        <h2 class="post-title">Aici avem urmatoarea postare</h2>
+                    </a>
+                    <p class="post-meta">Posted by&nbsp;<a href="#">bag pl in el</a></p>
+                </div>
+                <hr>
+                <div class="post-preview"><a href="#">
+                        <h2 class="post-title"><br><strong>Aici avem urmatoarea postare</strong><br><br></h2>
+                        <h3 class="post-subtitle">Subtext ma omor</h3>
+                    </a>
+                    <p class="post-meta">Posted by&nbsp;<a href="#">nu mai fac nimic</a></p>
+                </div>
+                <hr>
+                <div class="post-preview"><a href="#">
+                        <h2 class="post-title"><br><strong>Aici avem urmatoarea postare</strong><br><br></h2>
+                        <h3 class="post-subtitle"><br>Subtext ma omor<br><br></h3>
+                    </a>
+                    <p class="post-meta">Posted by&nbsp;<a href="#">te descurci</a></p>
+                </div>
+                <hr>
+                <div class="clearfix"><button class="btn btn-primary float-end" type="button">Ultimele postari</button></div> -->
+
+        </div>
+    </div>
+    <br><br>
+    <br><br>
+    <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong style="color: #17AA4B!important">CELE MAI NOI ARTICOLE Varianta 2</strong><br></h2>
+    <br><br>
+    <div class="container">
+        <div class="row">
+
+            <div class="blog-slider simplu">
+                <div class="blog-slider__wrp swiper-wrapper">
+                    <?php
+                    $user = new User();
+
+                    $posts = $user->getPosts();
+
+                    foreach ($posts as $post) {
+                        echo ' 
+                        <div class="blog-slider__item swiper-slide">
+                            <div></div>
+                            <div class="blog-slider__img">
+                                <img src="' . $post->cover . '" />
+                            </div>
+                            <div class="blog-slider__content">
+                                <span class="blog-slider__code">' . $post->data . '</span>
+                                <div class="blog-slider__title">' . $post->titlu . '</div>
+                                <div class="blog-slider__text">
+                                    ' . explode(";", $post->subtitluri)[0] . '
+                                </div>
+                                <a class="class=&quot;blog-slider__button" href="post.php?id=' . $post->id . '">READ MORE</a>
+                            </div>
+                        </div>
+                        ';
+                    }
+                    ?>
+                    <div class="blog-slider__pagination"></div>
+                </div>
+            </div>
 
             <!-- <div class="post-preview"><a href="#">
                         <h2 class="post-title">Aici avem urmatoarea postare</h2>
@@ -223,10 +285,77 @@ require_once './core/init.php';
 
 
         </div>
+        <div class="container">
+
+            <div class="section-title">
+                <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong style="color: #17AA4B!important">ULTIMELE EVENIMENTE 2</strong><br></h2>
+            </div>
+
+            <div class="row" data-aos="fade-up">
+
+            <div class="blog-slider simplu">
+                <div class="blog-slider__wrp swiper-wrapper">
+                    <?php
+                    $user = new User();
+                    $posts = $user->getEvents();
+
+                    foreach ($posts as $post) {
+                        echo ' 
+                        <div class="blog-slider__item swiper-slide">
+                            <div></div>
+                            <div class="blog-slider__img">
+                                <img src="' . $post->cover . '" />
+                            </div>
+                            <div class="blog-slider__content">
+                                <span class="blog-slider__code">Eveniment din anul ' . $post->an . '</span>
+                                <div class="blog-slider__title">' . $post->titlu . '</div>
+                                <div class="blog-slider__text">
+                                    ' . explode(";", $post->subtitluri)[0] . '
+                                </div>
+                                <a class="class=&quot;blog-slider__button" href="post.php?id=' . $post->id . '">READ MORE</a>
+                            </div>
+                        </div>
+                        ';
+                    }
+                    ?>
+                    <div class="blog-slider__pagination"></div>
+                </div>
+            </div>
+
+
+                <?php
+            //     $user = new User();
+            //     $events = $user->getEvents();
+            //     foreach ($events as $ev) {
+            //         echo '
+            //         <div class="col-md-4"> <div class="post-preview">
+            //         <a href="event.php?id=' . $ev->id . '">
+            //         <img class="d-xl-flex justify-content-xl-center align-items-xl-center" style="text-align: center;height: 254px;" src="' . $ev->cover . '" />
+            //         <h2 class="post-title">' . $ev->titlu . '</h2>
+            //         <!-- <h3 class="post-subtitle">' . explode(";", $ev->subtitluri)[0] . '&nbsp;</h3>-->
+            //         <p class="post-meta">Eveniment din anul ' . $ev->an . '</p>
+            //     </a>
+            // </div>
+            // <hr>
+            // </div>';
+            //     }
+                ?>
+            </div>
+
+            <style>
+                .col-md-5 {
+                    align-items: center;
+                    display: flex;
+                }
+            </style>
+
+
+        </div>
     </section><!-- End Features Section -->
     <?php require_once './footer.php';  ?>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/clean-blog.js"></script>
+    <script src="assets/js/Swiper-Slider-Card-For-Blog-Or-Product.js"></script>
 </body>
 
 </html>

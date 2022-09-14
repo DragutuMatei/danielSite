@@ -58,6 +58,10 @@ $posts = $user->getBlogPosts($offset, $rowsperpage);
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.compiled.css">
     <link rel="stylesheet" href="assets/scss/styles.css">
 
+    <link rel="stylesheet" href="assets/css/Swiper-Slider-Card-For-Blog-Or-Product-swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/Swiper-Slider-Card-For-Blog-Or-Product-untitled.css" />
+
+
 
 
 
@@ -253,25 +257,50 @@ $posts = $user->getBlogPosts($offset, $rowsperpage);
     <br><br>
     <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong style="color: #17AA4B!important">Toate articolele (<?php echo $numar ?>)</strong><br></h2>
     <br><br>
+    <div class="container">
+        <?php
+        foreach ($posts as $post) {
+            echo '
+                        <div class="blog-slider">
+                            <div class="blog-slider__wrp swiper-wrapper">
+                                <div class="blog-slider__item swiper-slide">
+                                    <div></div>
+                                    <div class="blog-slider__img">
+                                        <img src="' . $post->cover . '" />
+                                    </div>
+                                    <div class="blog-slider__content">
+                                        <span class="blog-slider__code">' . $post->data . '</span>
+                                        <div class="blog-slider__title">' . $post->titlu . '</div>
+                                        <div class="blog-slider__text">
+                                        ' . explode(";", $post->subtitluri)[0] . '
+                                        </div>
+                                        <a class="class=&quot;blog-slider__button" href="post.php?id=' . $post->id . '">READ MORE</a>
+                                    </div>
+                                </div>
+                                <div class="blog-slider__pagination"></div>
+                            </div>
+                        </div> <hr>';
+        }
+        ?>
+    </div>
     <div class="container d-xl-flex justify-content-xl-center">
         <div class="row d-xl-flex justify-content-xl-center">
             <div class="col-md-10 col-lg-8">
 
                 <?php
 
-                foreach ($posts as $post) {
-                    echo ' <div class="post-preview">
-                                <a href="post.php?id=' . $post->id . '">
-                                <img src="'. $post->cover . '" style="width: 447px;" />
-                                    <h2 class="post-title">' . $post->titlu . '</h2>
-                                    <h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3>
-                                </a>
-                                <p class="post-meta">A fost postat de <a href="https://www.facebook.com/muzeultecucean.antoncincu.1" target="_blank">Daniel Dojan</a></p>
-                            </div>
-                            <hr>';
-                }
+                // foreach ($posts as $post) {
+                //     echo ' <div class="post-preview">
+                //                 <a href="post.php?id=' . $post->id . '">
+                //                 <img src="' . $post->cover . '" style="width: 447px;" />
+                //                     <h2 class="post-title">' . $post->titlu . '</h2>
+                //                     <h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3>
+                //                 </a>
+                //                 <p class="post-meta">A fost postat de <a href="https://www.facebook.com/muzeultecucean.antoncincu.1" target="_blank">Daniel Dojan</a></p>
+                //             </div>
+                //             <hr>';
+                // }
                 ?>
-
 
                 <!-- <div class="post-preview"><a href="#">
                         <h2 class="post-title">Aici avem urmatoarea postare</h2>
@@ -356,6 +385,7 @@ $posts = $user->getBlogPosts($offset, $rowsperpage);
     <?php require_once './footer.php';  ?>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/clean-blog.js"></script>
+    <script src="assets/js/Swiper-Slider-Card-For-Blog-Or-Product.js"></script>
 </body>
 
 </html>
