@@ -82,33 +82,33 @@ require_once './core/init.php';
     <br><br>
     <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong style="color: #17AA4B!important">CELE MAI NOI ARTICOLE</strong><br></h2>
     <br><br>
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
 
 
             <?php
-            $user = new User();
+            // $user = new User();
 
-            $posts = $user->getPosts();
+            // $posts = $user->getPosts();
 
-            foreach ($posts as $post) {
-                echo ' 
-                    <div class="col-md-4">
-                    <div class="post-preview">
-                                <a href="post.php?id=' . $post->id . '">
-                                <img class="d-xl-flex justify-content-xl-center align-items-xl-center" style="text-align: center;height: 254px;" src="' . $post->cover . '" />
-                                    <h2 class="post-title">' . $post->titlu . '</h2>
-                                    <!--<h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3> -->
-                                </a>
-                                <p class="post-meta">A fost postat de <a href="https://www.facebook.com/muzeultecucean.antoncincu.1" target="_blank">Daniel Dojan</a></p>
-                            </div>
-                            <hr>
-                            </div>';
-            }
+            // foreach ($posts as $post) {
+            //     echo ' 
+            //         <div class="col-md-4">
+            //         <div class="post-preview">
+            //                     <a href="post.php?id=' . $post->id . '">
+            //                     <img class="d-xl-flex justify-content-xl-center align-items-xl-center" style="text-align: center;height: 254px;" src="' . $post->cover . '" />
+            //                         <h2 class="post-title">' . $post->titlu . '</h2>
+            //                         <!--<h3 class="post-subtitle">' . explode(";", $post->subtitluri)[0] . '&nbsp;</h3> -->
+            //                     </a>
+            //                     <p class="post-meta">A fost postat de <a href="https://www.facebook.com/muzeultecucean.antoncincu.1" target="_blank">Daniel Dojan</a></p>
+            //                 </div>
+            //                 <hr>
+            //                 </div>';
+            // }
             ?>
 
 
-            <!-- <div class="post-preview"><a href="#">
+            <-- <div class="post-preview"><a href="#">
                         <h2 class="post-title">Aici avem urmatoarea postare</h2>
                     </a>
                     <p class="post-meta">Posted by&nbsp;<a href="#">bag pl in el</a></p>
@@ -128,14 +128,10 @@ require_once './core/init.php';
                     <p class="post-meta">Posted by&nbsp;<a href="#">te descurci</a></p>
                 </div>
                 <hr>
-                <div class="clearfix"><button class="btn btn-primary float-end" type="button">Ultimele postari</button></div> -->
+                <div class="clearfix"><button class="btn btn-primary float-end" type="button">Ultimele postari</button></div> --
 
         </div>
-    </div>
-    <br><br>
-    <br><br>
-    <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong style="color: #17AA4B!important">CELE MAI NOI ARTICOLE Varianta 2</strong><br></h2>
-    <br><br>
+    </div> -->
     <div class="container">
         <div class="row">
 
@@ -250,7 +246,7 @@ require_once './core/init.php';
     <br>
     <br>
     <section class="features">
-        <div class="container">
+        <!-- <div class="container">
 
             <div class="section-title">
                 <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong style="color: #17AA4B!important">ULTIMELE EVENIMENTE</strong><br></h2>
@@ -258,21 +254,21 @@ require_once './core/init.php';
 
             <div class="row" data-aos="fade-up">
                 <?php
-                $user = new User();
-                $events = $user->getEvents();
-                foreach ($events as $ev) {
-                    echo '
-                    <div class="col-md-4"> <div class="post-preview">
-                    <a href="event.php?id=' . $ev->id . '">
-                    <img class="d-xl-flex justify-content-xl-center align-items-xl-center" style="text-align: center;height: 254px;" src="' . $ev->cover . '" />
-                    <h2 class="post-title">' . $ev->titlu . '</h2>
-                    <!-- <h3 class="post-subtitle">' . explode(";", $ev->subtitluri)[0] . '&nbsp;</h3>-->
-                    <p class="post-meta">Eveniment din anul ' . $ev->an . '</p>
-                </a>
-            </div>
-            <hr>
-            </div>';
-                }
+            //     $user = new User();
+            //     $events = $user->getEvents();
+            //     foreach ($events as $ev) {
+            //         echo '
+            //         <div class="col-md-4"> <div class="post-preview">
+            //         <a href="event.php?id=' . $ev->id . '">
+            //         <img class="d-xl-flex justify-content-xl-center align-items-xl-center" style="text-align: center;height: 254px;" src="' . $ev->cover . '" />
+            //         <h2 class="post-title">' . $ev->titlu . '</h2>
+            //         <!-- <h3 class="post-subtitle">' . explode(";", $ev->subtitluri)[0] . '&nbsp;</h3>-->
+            //         <p class="post-meta">Eveniment din anul ' . $ev->an . '</p>
+            //     </a>
+            // </div>
+            // <hr>
+            // </div>';
+                // }
                 ?>
             </div>
 
@@ -284,11 +280,11 @@ require_once './core/init.php';
             </style>
 
 
-        </div>
+        </div> -->
         <div class="container">
 
             <div class="section-title">
-                <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong style="color: #17AA4B!important">ULTIMELE EVENIMENTE 2</strong><br></h2>
+                <h2 style="color: #17AA4B;text-align: center;font-family: 'Lora',serif;"><strong style="color: #17AA4B!important">ULTIMELE EVENIMENTE</strong><br></h2>
             </div>
 
             <div class="row" data-aos="fade-up">
